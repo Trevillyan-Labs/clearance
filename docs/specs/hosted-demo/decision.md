@@ -11,3 +11,13 @@ Credential storage decision is pending: the 1Password service account refused cr
 Validation so far: 42 source tests pass; local production build passes. Live deployment and authenticated tunnel acceptance remain pending. The temporary tunnel requires its local process and the Mac to remain running. This is a hosted test deployment, not an independently hosted persistent backend.
 
 Deployment checkpoint: Vercel production build succeeded at https://clearance-dusky-three.vercel.app. Direct deployment is clearance-mwsziqg9w-trevillyan-labs.vercel.app. Both unauthenticated /api/company/state requests returned 302 to vercel.com/sso-api. Live proxy is intentionally unconfigured pending the storage decision. Do not describe this checkpoint as a working hosted live demo.
+
+## Verified live connection, supersedes pending checkpoint above
+
+Bill approved encrypted Vercel credential storage and in-memory local use. The bridge is active, with no secret stored in local files. Production deployment dpl_EdSeLuMVq9aiUMhqDrQfRAWWHKuG is READY at https://clearance-dusky-three.vercel.app/?view=stage.
+
+Through that hosted browser URL, reset/start created five real model workers with HydraDB search. Pricing paused; clicking the exact-read approval resumed it. Both C3 apps passed 19 checks and were delivered internally. Public delivery was refused. Intern/chief-of-staff comparison worked. Both hosted apps opened; Beacon at 10% discount produced $63,000 fees and 33.333% margin, requiring review. Crest opened at $35,000 fees and $21,000 cost.
+
+42 source tests and the Vercel build passed. Raw tunnel requests without its credential returned 401. Production alias and deployment requests without Vercel authentication redirected to SSO. Architecture and hosted labels were checked after the final deployment. An observed pending-approval status label was corrected to count working and awaiting_approval as active.
+
+The Mac app, gateway and temporary tunnel must remain running. Boat/Temporal remain paused. Custom TL domain, final video and coordinated Vercel CLI token rotation remain outstanding. Evidence: outputs/hosted-demo/live-receipt.json and verified-workspace.png.
