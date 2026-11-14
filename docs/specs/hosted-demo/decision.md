@@ -27,3 +27,7 @@ The Mac app, gateway and temporary tunnel must remain running. Boat/Temporal rem
 Production deployment dpl_9ubQaSdYC27DBbSrqvSFUVY9y5WD adds a four-step progress strip, persistent latest-change message, prominent scoped approval panel, larger colored worker states, visible inspection/download labels and top-level New mission control. Connections are hidden until a worker is selected and show only that worker's admitted sources. Expired approvals are disabled and direct the operator to New mission.
 
 TypeScript and Vercel production build passed. Browser verification on the production alias confirmed the existing expired approval, pricing input inspection, three pricing-only edges and zero edges after Clear selection. No mission reset or new inference was performed in this UI check. Evidence: outputs/hosted-demo/guided-workspace.png.
+
+## Demo request budget correction
+
+The session-wide 100-attempt guard stopped workers at $1.708774 reserved. Raised the independent attempt cap to 1,000, preserving the $20 reservation ceiling and accumulated accounting. Distinct errors identify request-count versus dollar exhaustion. Regression tests cover continuation after 100, retry stopping at 1,000, and refusal at $20; all 43 tests and production build pass. Backend restart must include CLEARANCE_HYDRA_DATABASE=default-tenant, as documented in README; omitting it produced a 403 during recovery and was corrected.

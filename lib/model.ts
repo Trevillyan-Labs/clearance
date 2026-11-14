@@ -29,7 +29,8 @@ export function createInferenceClient(dependencies:Dependencies){
   const body=JSON.stringify({model:MODEL,messages,max_tokens:2048,temperature:0,...(tools.length?{tools,tool_choice:'auto',parallel_tool_calls:false}:{})});
   for(let attempt=0;attempt<2;attempt++){
    const current=dependencies.readBudget();
-   if(current.requests>=100||current.reservedDollars+reserve>20)throw new Error('Session model budget reached');
+   if(current.requests>=1000)throw new Error('Session model request limit reached (1000 attempts)');
+   if(current.reservedDollars+reserve>20)throw new Error('Session model budget reached ($20 reservation ceiling)');
    current.requests++;current.reservedDollars+=reserve;dependencies.writeBudget(current);
    let response:Response;
    try{

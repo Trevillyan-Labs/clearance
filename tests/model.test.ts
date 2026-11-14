@@ -43,12 +43,14 @@ test('permanent errors and exhausted retries stop with sanitized errors',async()
 });
 
 test('retry cannot cross the request budget, and tools are included in reservations',async()=>{
- const h=harness([new Response('temporary',{status:503}),success()],{requests:99});
- await assert.rejects(h.infer(messages),/Session model budget reached/);
- assert.equal(h.calls(),1);assert.equal(h.state().requests,100);
+ const h=harness([new Response('temporary',{status:503}),success()],{requests:999});
+ await assert.rejects(h.infer(messages),/Session model request limit reached/);
+ assert.equal(h.calls(),1);assert.equal(h.state().requests,1000);
  const empty=harness([success()]);await empty.infer(messages);
  const withTools=harness([success()]);await withTools.infer(messages,[{type:'function',function:{name:'search',description:'Search only the assigned synthetic engagement.',parameters:{type:'object',properties:{query:{type:'string'}}}}}]);
  assert.ok(withTools.state().reservedDollars>empty.state().reservedDollars);
  const full=harness([success()],{reservedDollars:20});
  await assert.rejects(full.infer(messages),/Session model budget reached/);assert.equal(full.calls(),0);
 });
+
+test("demo can continue past 100 calls without resetting accumulated spend",async()=>{const h=harness([success()],{requests:100,reservedDollars:1.71});await h.infer(messages);assert.equal(h.state().requests,101);assert.ok(h.state().reservedDollars>1.71);});
