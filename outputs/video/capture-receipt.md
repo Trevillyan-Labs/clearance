@@ -11,3 +11,5 @@ Rebuild uses assemble.py and retained raw source path. timeline.json maps the fo
 ## Narrated draft
 
 ElevenLabs generation succeeded using the supplied account and stock Eric voice, eleven_multilingual_v2. Seven segments total approximately 142.66 seconds of generated audio, positioned within the 174-second edit with pauses for visible proof. Source segments and generation receipt are in audio/. The narrated draft is clearance-narrated-draft.mp4, 1920x1080 H.264 with AAC, exactly 174 seconds, 5,621,070 bytes. Full decode passed. No voice cloning was used. Proper-name pronunciation and subjective pacing have not received a human listening review. The aligned WAV is a local intermediate, not committed.
+
+Presentation copy: clearance-demo-v1.mp4 preserves the same 174-second picture edit with narration normalized toward -16 LUFS and -1.5 dBTP; complete decode passed. It remains a listening-review draft. Independent review emphasizes that output protection is this application's delivery gate and classification metadata, not post-export DLP or partner identity enforcement.
