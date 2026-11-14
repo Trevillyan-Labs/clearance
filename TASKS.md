@@ -1,5 +1,15 @@
 # Outstanding work
 
+## Shared company brain revision
+
+- [x] Record approved five-worker requirements and technical design.
+- [x] Implement company policy store, shared-source fixtures, typed proposal compiler and live retrieval adapter.
+- [x] Qualify five real model workers, exact policy grant, partner outputs and browser comparison/architecture. Evidence: docs/specs/company-proposal/test-plan.md.
+- [ ] Adapt persistent orchestration and authentication for public Vercel deployment and TL subdomain. Current operator routes remain local only.
+- [ ] Decide whether to integrate remote Boat execution after current demo qualification. The architecture view labels this proposed.
+
+## Original prototype
+
 - [x] Record the authorized consulting prototype, compressed process, scoped grants, actual source graph and one polished core.
 - [x] Prepare requirements/design and lean test/build plans; exact evidence is centralized in the test plan.
 - [x] Implement the labeled wiki, client-bound store/grants, compiler, controls and bounded retry.

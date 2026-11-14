@@ -1,2 +1,3 @@
-import { ClearanceConsole } from "../components/clearance-console";
-export default function Page() { return <ClearanceConsole />; }
+import {CompanyConsole} from "../components/company-console";
+import "./company.css";
+export default function Page(){return <CompanyConsole/>;}

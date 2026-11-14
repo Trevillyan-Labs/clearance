@@ -1,0 +1,19 @@
+{
+  "client": "beacon",
+  "heading": "Proposal summary",
+  "description": "Clean navy and teal proposal summary with readable headings. All examples are synthetic.",
+  "accent": "blue",
+  "projectName": "ERP rollout discovery",
+  "consultantDays": 20,
+  "architectDays": 10,
+  "consultantRateCents": 200000,
+  "architectRateCents": 300000,
+  "consultantCostCents": 120000,
+  "architectCostCents": 180000,
+  "maxDiscountBps": 2000,
+  "minMarginBps": 3500,
+  "reviewedPolicy": {
+    "maxDiscountBps": 2000,
+    "minMarginBps": 3500
+  }
+}

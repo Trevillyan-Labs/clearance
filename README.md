@@ -1,10 +1,14 @@
 # Clearance
 
-Build client software without crossing client context boundaries.
+One company brain. Five workers. Different clearances.
 
 A fictional consulting firm uses client-bound workers to search a labeled synthetic Markdown brain through HydraDB, request narrow same-client read grants, and generate tested standalone approval apps. The same purchase routes differently under each client's policy. Wrong-client inputs and delivery are refused before they can cross the application boundary.
 
-## Status
+## Shared company brain revision
+
+The approved five-worker proposal demonstration is implemented at `/`. It adds shared company knowledge, unequal worker clearances, scoped approval and an intern versus chief-of-staff policy comparison. Requirements and architecture are in [the revised PRD](docs/specs/company-proposal/prd.md) and [technical specification](docs/specs/company-proposal/tech-spec.md). The original verified demonstration remains at `/legacy`. The revised live run completed all five workers and two C3 partner applications; 37 tests and the production build pass. Browser comparison, architecture and calculators were verified. See [v2 verification](docs/specs/company-proposal/test-plan.md). Prior evidence below applies to v1 only.
+
+## V1 status
 
 Core prototype verified with explicit coverage limits. The production build repeated the live HydraDB/model flow for both clients, scoped grants, independent behavior checks and matching-client delivery. Actual production browser forms and cross-client refusal passed; HTML and JSON downloads passed their production probes. Fresh reassignment and reset were observed in development with unchanged logic, not falsely claimed as repeated in production. Video capture, public release and submission remain unfinished. The [test plan](docs/specs/prototype/test-plan.md) owns exact evidence and coverage.
 

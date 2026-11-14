@@ -1,0 +1,1 @@
+import {ClearanceConsole} from '@/components/clearance-console';export default function Legacy(){return <ClearanceConsole/>;}
