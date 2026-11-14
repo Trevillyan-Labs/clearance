@@ -31,3 +31,5 @@ TypeScript and Vercel production build passed. Browser verification on the produ
 ## Demo request budget correction
 
 The session-wide 100-attempt guard stopped workers at $1.708774 reserved. Raised the independent attempt cap to 1,000, preserving the $20 reservation ceiling and accumulated accounting. Distinct errors identify request-count versus dollar exhaustion. Regression tests cover continuation after 100, retry stopping at 1,000, and refusal at $20; all 43 tests and production build pass. Backend restart must include CLEARANCE_HYDRA_DATABASE=default-tenant, as documented in README; omitting it produced a 403 during recovery and was corrected.
+
+Delivery feedback correction: production dpl_3aQuWkQnm5XoScw1wHdsxRCACE8T displays the actual delivery response directly beneath the relevant proposal's controls. Reproduced the old offscreen notice, then verified Try public delivery on the hosted Beacon card shows Delivery blocked and the server reason, Restricted proposals require partner audience. Typecheck and Vercel build passed.

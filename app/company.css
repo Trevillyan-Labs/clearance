@@ -19,3 +19,5 @@
 @media(prefers-reduced-motion:reduce){.company-shell .co-worker-status,.co-transition,.co-approval-spotlight{animation:none}.company-shell .co-document,.company-shell .co-worker{transition:none}}
 
 .co-output-actions{flex-wrap:wrap}.co-download{width:auto;padding:8px 10px;gap:5px;font-size:11px}
+
+.co-delivery-feedback{display:flex;gap:12px;margin-top:14px;padding:18px;border:2px solid #b65d20;border-radius:10px;background:#fff0df;color:#78370b;animation:co-update 1.8s ease-out}.co-delivery-feedback strong{font-size:19px}.co-delivery-feedback p{font-size:14px;line-height:1.5;margin:7px 0 0}
