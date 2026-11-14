@@ -1,5 +1,5 @@
 ---
-status: revised draft, awaiting scope acceptance
+status: accepted prototype scope; implementation in progress
 owner: bill
 last_verified: 2026-11-14
 ---
@@ -7,58 +7,57 @@ last_verified: 2026-11-14
 
 ## Problem and vision
 
-A consulting firm serves multiple clients whose equally confidential records must not influence one another's work. A consultant may legitimately work on both engagements, but an agent already exposed to one client's information cannot be made clean by changing its permission label. Bill supplied this concrete use case on November 14. It is an opportunity hypothesis, not a production customer validation result.
+A consulting firm serves clients whose equally confidential records must not influence one another's work. A consultant may legitimately work on both engagements, but an agent already exposed to one client's information cannot be made clean by changing its permission label. Bill supplied this use case on November 14. It is an opportunity hypothesis, not production customer validation.
 
-Why-chain: building client software requires context; context includes private rules; reusable workers can carry previous client context; permission changes do not erase it; the firm risks wrong software and confidential disclosure. Stop at that addressable consequence, rather than a universal claim about trust.
+Why-chain: building client software requires context; context includes private rules; reused workers can carry previous-client context; changing permissions cannot erase it; the firm risks wrong software and confidential disclosure. Stop at that addressable consequence rather than a universal trust claim.
 
-Vision: reuse the firm's expertise and software tools while each engagement's private context stays inside its own work. The operator can deliver software for two clients without manually inspecting every retrieved passage.
+Vision: reuse the firm's expertise and tools while private context stays inside its engagement. The operator delivers useful software without inspecting every retrieved passage or granting every worker blanket access.
 
 ## Noon experiment
 
-Fictional Northstar Advisory builds vendor-purchase approval mini-apps for Beacon Manufacturing and Crest Industries. Both have a confidential document named Vendor Approval Policy and the same task: build the approval form and routing rules. Their policies differ. For an invented $75,000 purchase, Beacon requires Procurement and CFO approvals; Crest requires its Department Manager. All figures, firms and policies are invented and illustrate software behavior, not financial advice.
+Fictional Northstar Advisory builds vendor-approval mini-apps for Beacon Manufacturing and Crest Industries. Both have confidential Vendor Approval Policy documents and the same task. For an invented USD 75,000 purchase, Beacon needs Procurement and CFO approvals, while Crest needs its Department Manager. Firms, figures and policies are invented to demonstrate software behavior.
 
-Two workers run in parallel. Each produces a runnable approval app and passes independent client-specific behavior checks. A judge attempts to insert Crest's policy into Beacon's context, sees the attempt rejected, and then reassigns the consultant role: a fresh worker starts, with no prior client's conversation. Generated applications remain usable in their own client previews.
+A metadata-only coordinator proposes workers for both clients, with clearance bounded by server ceilings. Each worker searches its own context and requests a one-use exception for its client's Restricted threshold file. Approval never grants another client or lowers the resulting artifact's classification. The workers generate runnable apps and pass independent client-specific checks. A judge tries to attach Crest's source to Beacon's context and sees it refused. Reassigning the consultant role creates a fresh worker rather than moving the old conversation.
 
-A three-minute video is the creative target, not a verified duration requirement. Noon target is working software plus a rehearsable capture sequence. A rendered final video is a separate deliverable before submission unless completed earlier. Software generation/testing is central because official event theme fit is pass/fail.
+The three-minute video is a creative target, not an exact verified duration requirement. Noon means working software and a rehearsable capture sequence. Final capture/edit/upload follows before submission if not completed earlier. One polished core demonstration comes first; a second presentation variant is optional, not a second product.
 
-## Authority model
+## Authority and brain
 
-Two independent dimensions: engagement compartment and sensitivity. Four levels remain Public, Internal, Confidential and Restricted. A worker belongs to exactly one engagement for its lifetime. Higher clearance never grants another engagement. A principal authorized for both engagements can start separate workers; no worker context is switched or merged.
+Engagement and sensitivity are independent. Four classes: Public, Internal, Confidential and Restricted. A worker belongs to exactly one client for its lifetime. Higher clearance never changes the client. A principal authorized for both clients starts separate workers; contexts are not switched or merged.
 
-Shared methodology is a tiny manually approved, immutable synthetic pack copied into each client corpus. No learned shared memory. Generated artifacts retain their engagement and the highest class of all inputs seen, including uncited inputs. The client preview is a scoped destination, not an unrestricted public publication.
+The brain is one synthetic Markdown wiki, indexed in one HydraDB database with client-specific collection namespaces. Each file has owner, class and version labels. Workers receive admitted passages, never the whole wiki checkout. Git branches organize development and do not separate confidential information. The approved synthetic methodology pack is copied into both client corpora; no generated content becomes shared learned memory. The metadata-only coordinator never sees client document bodies, generated apps or acceptance answers.
 
-## Requirements and acceptance
+Artifacts retain client ownership and the highest classification of all observed inputs, including uncited sources. Client previews and downloads are scoped destinations, not public release.
 
-| ID | Outcome | Lean acceptance |
+## Requirements and lean acceptance
+
+| ID | Outcome | Acceptance |
 |---|---|---|
-| R1 | Assign engagement and clearance at spawn. | Two independent initial workers, one per client. Model-supplied identity or client parameters cannot alter assignment. |
-| R2 | Search actual HydraDB within the assigned client. | Same query retrieves appropriate policy per client. Every admitted source matches the run's engagement and clearance. Unknown IDs and wrong-client requests reveal no content/title to the worker. |
-| R3 | Build working client software. | Each worker generates a bounded approval workflow, yielding an interactive amount form and approval routing. The same $75,000 input produces the two fixture-defined outcomes. Downloadable standalone HTML apps and workflow configs record what was generated; each app runs independently of Clearance. |
-| R4 | Check generated behavior independently. | Each generated workflow passes below/at/above-threshold cases held separately from generation. A wrong threshold or wrong approver fails; passing is never inferred from model confidence. |
-| R5 | Keep derived artifacts in their engagement. | Artifacts carry the full observed-input class and client. Attempted delivery to the other client's preview fails. Reading both clients in a common content-bearing manager context is not allowed. |
-| R6 | Reject attempted cross-client context injection before generation. | A visible operator demonstration uses the same read-admission boundary as retrieval. The other client's document is refused, absent from actual model inputs, and legitimate work continues. Higher clearance does not change the refusal. |
-| R7 | Reassignment creates a fresh worker. | Moving the consultant role ends/retains the old run separately and starts a new ID/history for the destination. New model payload has only destination-client/approved-methodology inputs, no prior response ID, drafts or summary. |
-| R8 | Explain the real boundary and produce a repeatable demo. | Two client lanes show actual sources, worker assignment, input manifest, generated application, test outcomes and delivery state. Full sequence completes and resets without reviving old runs/grants. |
-| R9 | Remain independently MIT-publishable. | New implementation, synthetic corpus, MIT license and dependency disclosure; no private project source/designs or client data. |
+| R1 | Bind worker client and clearance at spawn. | Coordinator proposes two workers using metadata only; server rejects assignments outside its allowed clients/clearance ceiling. Model arguments cannot alter immutable authority. |
+| R2 | Search real HydraDB within the assigned client. | Same query finds the appropriate policy. Admitted sources match client and clearance or exact grant. Unknown and wrong-client sources reveal no content/title to the worker. Wiki owner/class/version labels are validated before indexing. |
+| R3 | Build useful client software. | Each worker generates a bounded approval workflow and a runnable amount/approval-routing app. The same USD 75,000 input gives the two expected outcomes. Standalone HTML and configuration downloads run independently of Clearance. |
+| R4 | Check behavior independently. | Below/at/above-threshold cases are held apart from generation. Wrong threshold/roles fail; model confidence is not a passing check. Exported apps also work in a browser. |
+| R5 | Keep artifacts in their engagement. | Outputs include all observed-input restrictions. Wrong-client delivery fails. No content-bearing manager combines both clients. |
+| R6 | Reject cross-client context admission. | A visible operator-triggered attachment uses the same admission function as search. Wrong-client document is refused before model context, even at highest clearance; legitimate work continues. |
+| R7 | Reassignment starts fresh. | Old run ends separately. New run gets a new ID/history, destination-client sources and approved methodology only, with no old draft, summary or continuation identifier. Late old results are ignored. |
+| R8 | Make the boundary inspectable and repeatable. | Two lanes and a simple source-to-worker-to-artifact graph show actual reads, grants, generated behavior, checks and delivery. A complete run and reset/repeat do not revive old authority. |
+| R9 | Remain MIT-publishable. | New implementation, invented corpus, MIT license and dependency disclosure; no proprietary designs/source, client records or credentials. |
+| R10 | Allow a narrow within-client exception. | Approved read is bound to run, source/content/policy version and same client; it expires after five minutes or one use. Other worker/client, expired or reused grants fail. Read approval never declassifies output. |
 
-R1/R2/R5-R7 protect engagement-specific work; R3/R4 produce useful verified software; R8 makes the claim inspectable; R9 permits hackathon release.
+R1/R2/R5-R7/R10 preserve bounded delegation; R3/R4 produce useful verified software; R8 makes intervention understandable; R9 permits hackathon use.
 
-## Explicit cuts from the first draft
+## Scope and cuts
 
-Replace generic launch page, sales brief and pricing memo with two instances of one working approval app. Replace the global knowledge graph with two engagement lanes and real source trails. Replace public publication with client-scoped delivery. Two initial workers plus a fresh replacement suffice; three simultaneous roles add no evidence.
+Two initial workers plus a fresh replacement, one generated app type, exact same-client grants and a small recorded-source graph are in scope. Dynamic reclassification and client-only policy change/rebuild are stretch work after the core passes. No cross-client exception or approve-anyway button.
 
-Document reclassification and within-client restricted-read grants are follow-ons, not noon acceptance. The app still enforces clearance at every admission. There is no cross-client exception or approve-anyway button. A legitimate future sharing workflow would require separately released material, not reusing a contaminated context.
+No arbitrary code execution, general tools, dynamic wiki writes, user uploads, automatic classification, semantic redaction, cross-client analytics, shared learned memory, enterprise SSO, real-client deployment, provider-isolation claim or hostile-host sandbox. Boat and Temporal were explored as optional ideas; neither is a dependency. Trusted operator can inspect both synthetic clients, but that UI is not model context. Fixed tasks avoid treating arbitrary pasted secrets as public instructions.
 
-## Non-goals and limits
+## Evidence and current state
 
-No arbitrary code execution, general tools, user uploads, automatic document classification, semantic redaction, cross-client analytics, shared learned memory, multi-user enterprise authentication, external client deployment, provider isolation claim or malicious-host sandbox. Trusted operator can inspect both clients; the operator's view never becomes worker context. Fixed tasks prevent arbitrary operator-pasted secrets from being silently treated as Public input. Correct ingestion labels are an assumption to test, not an AI guarantee.
+Build is authorized under the compressed prototype process. Thirteen local checks pass for corpus validation, store boundaries, HydraDB request/response shaping, workflow behavior and export. These are not live service or browser acceptance. HydraDB account/API setup, real coordinator/worker generation, UI integration and the complete rehearsal remain pending at this checkpoint. A promo offer is not a credential.
 
-No production or universal zero-leakage claim. The measurable claim is that the supplied tools and input builder exclude other-client sources from each controlled run and refuse wrong-client delivery.
-
-## Measurement and context
-
-Record ordinary scoped read, deny, generation, test, fresh-run and delivery events. Inspect actual model-input manifests and client-specific tests; absence of a secret string in output alone is insufficient. Measure latency during rehearsal. A recording may use labeled time cuts, never invented completion states.
+Measure actual scoped reads/denials, grants, generation, client tests, fresh runs and delivery. Inspect constructed model inputs; absence of a secret string in final output alone is insufficient. Recorded video can use labeled time cuts, never invented completion states. No universal zero-leakage or production-security guarantee is claimed.
 
 ![A consulting operator requests two client applications; Clearance searches scoped knowledge and generates workflows, then delivers only to the matching client preview.](context.svg)
 
-[Design](tech-spec.md) | [Demo and challenge review](../../../outputs/clearance-consulting-review.md) | [Delivery outlook](delivery-outlook.md)
+[Design](tech-spec.md) | [Test plan](test-plan.md) | [Build plan](build-plan.md) | [Storyboard](../../../outputs/clearance-consulting-review.md)

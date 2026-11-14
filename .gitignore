@@ -6,3 +6,5 @@ dist/
 *.sqlite*
 .runtime/
 .DS_Store
+
+*.tsbuildinfo

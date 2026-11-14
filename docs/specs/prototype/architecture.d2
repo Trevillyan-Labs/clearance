@@ -1,28 +1,32 @@
 direction: down
 browser: "Trusted local operator" {
- console: "[NEW] Two client lanes"
+ console: "[NEW] Two client lanes and source graph"
  previews: "[NEW] Scoped previews and downloads"
 }
 host: "Local Node application" {
- runs: "[NEW] Immutable engagement workers"
- broker: "[NEW] Scope and clearance broker"
- state: "[NEW] SQLite input and artifact state" {shape: cylinder}
- fixtures: "[NEW] Canonical client fixtures"
- compiler: "[NEW] Workflow compiler and tests"
+ planner: "[NEW] Metadata-only coordinator"
+ runs: "[NEW] Immutable client workers"
+ broker: "[NEW] Scope, clearance and grant broker"
+ state: "[NEW] SQLite inputs, grants and artifacts" {shape: cylinder}
+ wiki: "[NEW] Labeled immutable Markdown brain"
+ compiler: "[NEW] Workflow compiler and independent checks"
  delivery: "[NEW] Client-matching delivery gate"
 }
 external: "Vendor services" {
- hydra: "[EXTERNAL] HydraDB separate collections"
- model: "[EXTERNAL] Model separate histories"
+ hydra: "[EXTERNAL] One HydraDB database / client collections"
+ model: "[EXTERNAL] xAI separate model histories"
 }
-browser.console -> host.runs: "Spawn; reassignment creates fresh run"
-host.runs -> host.broker: "Query; bound identity"
-host.broker -> external.hydra: "Fixed client scope and ACL"
-host.broker -> host.fixtures: "Ranked IDs to verified bodies"
-host.broker -> host.state: "Admit matching client and clearance"
-host.runs -> external.model: "Permitted context only"
-host.runs -> host.compiler: "Bounded workflow JSON"
-host.fixtures -> host.compiler: "Independent acceptance cases"
-host.compiler -> host.state: "Client-owned tested app"
-host.state -> host.delivery: "Identity, provenance, passed tests"
-host.delivery -> browser.previews: "Matching client standalone app"
+browser.console -> host.planner: "Fixed mission metadata"
+host.planner -> external.model: "Metadata-only assignment proposal"
+host.planner -> host.runs: "Server-validated client and clearance"
+host.runs -> host.broker: "Query / exact same-client read request"
+host.broker -> external.hydra: "Fixed database, client collection and ACL"
+host.broker -> host.wiki: "Ranked IDs to canonical labeled bodies"
+host.broker -> host.state: "Atomic read admission / one-use grant"
+browser.console -> host.broker: "Approve scoped read / attempt attachment"
+host.runs -> external.model: "Own-client permitted context only"
+host.runs -> host.compiler: "Bounded generated workflow JSON"
+host.compiler -> host.state: "Client-owned app and test results"
+host.state -> browser.console: "Actual read, grant and artifact events"
+host.state -> host.delivery: "Client, provenance and passing checks"
+host.delivery -> browser.previews: "Matching-client standalone app"

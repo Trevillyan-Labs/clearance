@@ -1,6 +1,6 @@
 # Clearance challenge review and three-minute story
 
-Revised proposal, November 14. Prior launch-page scope was not approved. Application still unbuilt.
+Accepted consulting scope, November 14. Application implementation is in progress; the test plan records measured acceptance separately from this recording choreography.
 
 ## Self-assessment
 
@@ -22,12 +22,12 @@ These are expert lenses and reviewed design reasoning, not interviews or endorse
 | Time | Show | Narration/purpose |
 |---|---|---|
 | 0:00-0:20 | Consulting firm and two client rooms, each with Vendor Approval Policy | Same firm, same task, equally confidential documents, incompatible client contexts. |
-| 0:20-0:55 | Start both builders; show actual scoped sources and generated workflows | Reuse the tools and methodology without sharing client records. |
-| 0:55-1:20 | Enter the same $75,000 purchase into both apps; display actual test outcomes | Beacon routes to Procurement + CFO; Crest routes to Department Manager. Real different software behavior from different policies. |
-| 1:20-1:50 | Attempt to attach Crest's policy to Beacon; show real broker refusal | Raising clearance still cannot cross the client boundary. Valid work continues. |
-| 1:50-2:20 | Reassign consultant role; old context stays behind, new empty run starts | Transfer the role, not the previous conversation. |
-| 2:20-2:45 | Inspect actual input manifests and client-scoped app delivery | Demonstrate the exclusion at model input, not just an absence in generated prose. |
-| 2:45-3:00 | Download and open the standalone apps | Clearance is a bounded software factory for confidential engagements. |
+| 0:20-0:45 | Start both builders; show actual scoped search and source edges | One brain index, two independently bounded contexts. |
+| 0:45-1:10 | Show Restricted appendix requests; approve each exact one-use read | Workers pause for information beyond their baseline clearance. Approval is specific to a source, client and run. |
+| 1:10-1:45 | Deliver and open both apps; enter the same $75,000 purchase | Beacon routes to Procurement + CFO; Crest routes to Department Manager. Show the actual behavior checks beside the real apps. |
+| 1:45-2:10 | Attempt to attach the other client's source; show broker refusal | The scoped grant did not authorize crossing the client boundary. |
+| 2:10-2:40 | Reassign a consultant role; inspect the fresh context and actual source graph | Transfer the role without transferring its previous conversation. Edges show recorded inputs, not decorative connections. |
+| 2:40-3:00 | Show downloaded standalone apps and the two client delivery lanes | A bounded software factory can reuse its tools while keeping engagement information separate. |
 
 Any shortened generation waits are labeled time cuts. A recorded demo is called recorded. No fake breach, fake test pass, decorative success animation or universal zero-leak claim.
 
@@ -37,6 +37,6 @@ The [official rules](https://evolve-8090.devpost.com/rules), retrieved November 
 
 ## Scope decision
 
-Recommend this consulting workflow factory in place of the launch-page demonstration. [PRD](../docs/specs/prototype/prd.md) owns outcomes and [tech spec](../docs/specs/prototype/tech-spec.md) owns mechanisms. Grants and reclassification are explicitly deferred. This is a revised decision request, not approval or an implemented result.
+Bill approved this consulting workflow factory, scoped grants and a simple source graph. [PRD](../docs/specs/prototype/prd.md) owns outcomes and [tech spec](../docs/specs/prototype/tech-spec.md) owns mechanisms. Dynamic reclassification remains stretch. Stage and Workspace are two views of the same implementation, not separate products.
 
 Second challenge: JSON alone risks looking like a configuration dashboard. The revised deliverable is standalone runnable HTML plus configuration, emitted by a deterministic compiler. Optional stretch after the core passes: apply a Beacon-only policy change, rebuild and check Beacon while Crest remains unchanged. This is not a noon prerequisite.

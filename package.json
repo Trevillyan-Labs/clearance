@@ -1,0 +1,29 @@
+{
+  "name": "clearance",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3090",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 3090",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "seed": "node --import tsx scripts/seed.ts"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@aws-sdk/client-bedrock-runtime": "3.1169.0",
+    "@aws-sdk/credential-providers": "3.1169.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "tsx": "^4.20.0",
+    "@types/node": "^26.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}
