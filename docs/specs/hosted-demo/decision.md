@@ -21,3 +21,9 @@ Through that hosted browser URL, reset/start created five real model workers wit
 42 source tests and the Vercel build passed. Raw tunnel requests without its credential returned 401. Production alias and deployment requests without Vercel authentication redirected to SSO. Architecture and hosted labels were checked after the final deployment. An observed pending-approval status label was corrected to count working and awaiting_approval as active.
 
 The Mac app, gateway and temporary tunnel must remain running. Boat/Temporal remain paused. Custom TL domain, final video and coordinated Vercel CLI token rotation remain outstanding. Evidence: outputs/hosted-demo/live-receipt.json and verified-workspace.png.
+
+## Guided UI, verified November 14 before 2pm
+
+Production deployment dpl_9ubQaSdYC27DBbSrqvSFUVY9y5WD adds a four-step progress strip, persistent latest-change message, prominent scoped approval panel, larger colored worker states, visible inspection/download labels and top-level New mission control. Connections are hidden until a worker is selected and show only that worker's admitted sources. Expired approvals are disabled and direct the operator to New mission.
+
+TypeScript and Vercel production build passed. Browser verification on the production alias confirmed the existing expired approval, pricing input inspection, three pricing-only edges and zero edges after Clear selection. No mission reset or new inference was performed in this UI check. Evidence: outputs/hosted-demo/guided-workspace.png.
