@@ -32,4 +32,12 @@ The inspector supports focus entry, a keyboard focus loop, Escape dismissal and 
 
 `npm run typecheck` and `git diff --check` passed after the UI changes. The focused browser checks were repeated after the contract-review fixes and passed.
 
-Still unexercised in the browser: populated grant expiry, successful live generation, generated artifact delivery, fresh reassignment and the final populated Stage frame. Those require real run state and service access. The related UI fixes were derived from backend-contract inspection; this report does not claim those runtime paths passed. No simulated populated state was substituted for that missing evidence.
+At the initial UI-only checkpoint, grant expiry, live generation, delivery, reassignment and populated framing had not yet been exercised. No simulated populated state was substituted. Subsequent measured integration coverage is recorded in the [canonical test plan](../docs/specs/prototype/test-plan.md); this paragraph describes the initial checkpoint, not the current acceptance state.
+
+## Follow-on inspection with real generated state
+
+After the integration coordinator reported a successful live run, a separate browser capture inspected the actual populated Stage presentation. Beacon showed its retired original worker and delivered application; Crest showed a fresh active worker, an actual pending scoped grant and the delivered artifact retained from its earlier run. Both visible generated applications showed five passing independent checks. The grant and both artifact controls fit within a 1440 by 900 frame. This observation verifies presentation of real state, not a separate execution of the integration tests.
+
+The lineage display now draws an individual source-to-worker edge for each recorded observed input and a worker-to-artifact edge only when the artifact's run ID matches. The fresh Crest worker had four observed source edges and no edge to the retained earlier artifact. Beacon's original run retained its legitimate artifact edge. Source labels map to the corresponding source cards; no semantic or imagined edge is generated.
+
+The current-session view also now scopes visible runs, artifacts, counters and event trail to worker-start events after the latest reset event. Event order, rather than timestamp comparison, avoids same-millisecond ambiguity. Stored history is unchanged. The integration coordinator subsequently observed a blank reset and the production pair. JSON configuration and standalone HTML links use the same engagement-scoped download route; the production probe confirmed both formats and wrong-client refusal. The test plan owns the exact development versus production coverage.

@@ -1,43 +1,62 @@
 ---
-status: active prototype test plan
+status: core verified with explicit coverage; video and public submission pending
 owner: ren
 last_verified: 2026-11-14
 ---
-# Clearance lean test plan
+# Clearance verification and evidence
 
-The approved compressed path retains focused boundary checks and one real end-to-end run, followed by reset/repeat. Tests occupy roughly 15 to 20 percent of implementation effort, plus rehearsal. No separate proof system or new testing framework. Tests were written before their implementation in the assigned backend/workflow lanes; passing source checks do not establish live service behavior.
+This document owns measured outcomes and remaining obligations. The core prototype is verified with the precise production/development coverage below. It is not a production-security certification, an assertion that every development action was repeated in production, or a completed hackathon submission.
 
-## Commands and current evidence
+## Source checks
 
-Canonical command: `npm test`, which runs Node with the tsx loader. At this checkpoint all 17 tests pass. Direct native Node without that loader is not the repository's current runner and cannot resolve the workflow test's extensionless imports.
+Final `npm test` passed all 23 tests, including the bounded transient-retry checks. `npm run build` passed and the resulting production application was started on `http://127.0.0.1:3090`. Type checking had also passed at the integration checkpoint. No CI result is claimed. Tests run through the configured tsx loader, not bare native Node resolution.
 
-| Existing suite | Count | What passed | Requirement |
-|---|---:|---|---|
-| tests/brain.test.ts | 2 | Twelve labeled sources load; wrong-folder ownership and symlink routing refuse. | R2, R9 |
-| tests/hydra.test.ts | 3 | Exactly one client collection/nonempty ACL in request; normalization returns ranked IDs only; status polls repeat source IDs. These are local adapter checks, not real API calls. | R2 |
-| tests/store.test.ts | 5 | Wrong-client reads/grants fail at C3; grants are run-scoped/one-use/expiring; all observed-input restrictions inherit; matching-client delivery only; ended/failed/untested runs refuse; restart does not revive active authority. | R1, R5-R7, R10 |
-| tests/workflow.test.ts | 4 | Same transaction routes differently; wrong-client workflow fails independent cases; schema is bounded; standalone export uses fixed runtime and inert configuration. | R3, R4 |
-| tests/runtime.test.ts | 3 | Actual runtime with injected model/search excludes adversarial foreign IDs from model inputs; scoped approval produces checked artifacts; reassignment starts fresh history; late retired-run output is ignored. | R1, R5-R7 |
+| Suite | Verified coverage |
+|---|---|
+| tests/brain.test.ts | Labeled source loading, wrong-folder ownership and symlink rejection. |
+| tests/hydra.test.ts | Fixed database/client scope, explicit email-shaped ACL principals, ID-only response normalization and repeated status-query IDs. |
+| tests/store.test.ts | Cross-client refusal even at C3; one-use/run/version/expiry grants; inherited restrictions; matching-client delivery; failed/untested/ended-run rejection; restart interruption. |
+| tests/workflow.test.ts | Distinct client policy behavior, independent wrong-client/boundary failures, bounded schema and escaped standalone export. |
+| tests/runtime.test.ts | Typed exact-two-worker C2 delegation; runtime with injected services; foreign-ID exclusion; scoped reads; fresh reassignment; late retired-result rejection. |
+| tests/http.test.ts | Exact external Host/Origin despite Next's internal localhost URL; cross-site and session rejection. |
+| tests/model.test.ts | Bounded transient retry, sanitized permanent/exhausted failure, and request/token reservations across attempts and tool payloads. |
 
-`npm run typecheck` and `npm run build` passed at the integration checkpoint. Repeat after review fixes settle. No CI result is claimed. If CI is added for public submission, use these ordinary commands rather than another harness.
+The HTTP defect was reproduced through the browser-equivalent path before repair: same-origin actions received Cross-origin access denied. The corrected guard uses the exact allowlisted external Host. The harmless probe then reached Unknown action, and negative origin/session cases remained rejected. Cookies and credentials were not printed.
 
-## Remaining focused integration checks
+## Service configuration and measured retrieval
 
-| Check | Minimum evidence | Status |
+The actual HydraDB database field is `default-tenant`, confirmed from GET /databases. Client collection names are `client_beacon` and `client_crest`. The implementation fallback `clearance_demo` is not the verified seeded database; the running configuration explicitly selects the measured scope. Server-derived ACL principals are email-shaped synthetic identifiers.
+
+The corpus contains twelve invented Markdown documents. Scoped C3 qualification returned all six expected IDs for each client. Status polling remained queued despite those successful queries. Seed verification therefore checks actual scoped retrieval coverage, not an assertion that background graph indexing completed. The production workers also performed their actual C2-scoped searches and exact same-client Restricted reads. No fixture search substituted for the final live run.
+
+## Final production coverage
+
+| Area | Measured production result | Scope |
 |---|---|---|
-| Coordinator | Capture the actual model request: task/client/ceiling metadata only. Invalid client or above-ceiling proposal is refused server-side. | Pending runtime integration |
-| Live index | Ingest the twelve synthetic sources into one database/two collections; wait for readiness; perform same query in both scopes and verify attributed IDs and admitted inputs. No wildcard/empty ACL. | Pending HydraDB account/API setup |
-| Real workers | Two independent xAI histories search, request their own Restricted threshold read, and generate valid workflow JSON. No prior client's messages, generated app or expected-case answers enter another worker. | Model-only trial passed for both clients with explicitly injected fixture search; real HydraDB integration pending. |
-| Grant lifecycle | Approve each requested same-client read through the UI; show consumption and Restricted artifact inheritance. Wrong client remains denied even with high clearance. | Pending UI/runtime rehearsal |
-| Boundaries through real routes | Attempt foreign source attachment and foreign artifact preview/download. Refuse before context/response body. Retire a run with a pending model response; late output does not become a valid artifact. | Pending integrated routes |
-| Actual apps | Run both exported HTML apps in a browser. Enter USD 75,000 and confirm Beacon Procurement+CFO versus Crest Department Manager, plus the independently defined threshold boundary cases. | Model-only trial HTML verified in browser at USD 75,000 for both clients and Crest USD 100,000. Full integrated boundary rehearsal pending. |
-| Graph and freshness | Compare displayed source edges to observed-input records. Reassign consultant role and inspect a new empty history before destination reads. Coordinator remains metadata-only. | Pending UI/runtime rehearsal |
-| Full demonstration | Complete the selected three-minute story, measure latency, reset and repeat without stale grant/run resurrection. A labeled time cut is allowed for the recording; fabricated states are not. | Pending rehearsal |
+| Coordinator and workers | Typed delegate_workers validates exactly Beacon and Crest at C2. Independent real-model workers used actual HydraDB searches and their own scoped grants. | Coordinator receives task/authority metadata, not client document bodies or generated app contents. |
+| Generated applications | Both apps passed their five independent client-specific behavior checks and were delivered to the matching client. | Model confidence is not the checker. Generated output is a bounded workflow compiled through the fixed runtime. |
+| Actual browser forms | Production artifacts were opened through the actual UI. USD 75,000 requires Procurement then CFO for Beacon, and Department Manager for Crest. | Demonstrates routing, not authenticated corporate approval identities. |
+| Cross-client attachment | The production UI challenge rejected the foreign client's source before worker admission. | Operator-triggered boundary test, not a fabricated autonomous exploit. |
+| JSON and HTML downloads | Both formats returned 200 with expected MIME/attachment names. JSON matched the stored workflow. Wrong-client request returned 400. | The delivered-artifact/client guard precedes either format. Downloaded data cannot be recalled. |
 
-One integrated run can satisfy multiple rows. Repeat only the relevant checks after a repair, then the final complete rehearsal. Do not broaden tests merely to increase the count.
+The production run repeated the core pair after the final build. It did not repeat every development scenario listed below.
 
-## Acceptance decision
+## Additional development coverage, not mislabeled as production
 
-Core is ready only when real HydraDB search, real model generation, matching-client software behavior, grant/denial, client delivery and fresh reassignment have been exercised through the user-facing flow. Offline fixture runs can validate layout or local logic but cannot replace live-service evidence. A failed required boundary blocks presenting that claim as working.
+- Beacon USD 49,999.99 and 50,000, plus Crest USD 100,000, behaved as specified in browser checks.
+- Reassigning the consultant role retired Beacon's run and started a new Crest run using only Crest sources and its own grant. That interaction was observed in development with unchanged logic; it was not repeated in the final production run.
+- Individual actual admitted-source edges were observed in the graph. These are stored input relationships, not inferred semantic or simulated success edges.
+- Reset produced a blank new mission while retaining history. It was observed in development, not repeated in the final production run. No file deletion or revived authority is claimed.
+- Local regression checks exercise grant expiry/reuse, adversarial source IDs, retirement races and restart behavior. They are not replaced by screenshot evidence.
 
-Dynamic reclassification and a second presentation variant are outside this core acceptance. Their absence is not a failure of the agreed noon scope.
+## Saved evidence
+
+[Production receipt](../../../outputs/demo/production-receipt.json), [production scene](../../../outputs/demo/production-demo.jpg), [scoped-grant scene](../../../outputs/demo/scoped-grants.jpg), [Beacon HTML](../../../outputs/demo/beacon-approval-app.html), [Beacon JSON](../../../outputs/demo/beacon-approval-app.json), [Crest HTML](../../../outputs/demo/crest-approval-app.html), [Crest JSON](../../../outputs/demo/crest-approval-app.json).
+
+These artifacts exist and support the recorded outcomes. Screenshots and executable apps are not a completed video.
+
+## Remaining deliverables
+
+Video capture is unfinished. The browser CDP screencast attempt stalled for approximately fifty minutes and did not produce the final video; that capture path was dropped. A successful recording, review and upload remain owed. Use real waits or explicitly labeled time cuts, never invented completion states.
+
+Public-content/dependency review, public MIT release and final submission remain pending. Dynamic reclassification remains stretch. Workspace and Stage are views of the same verified core. The isolated Temporal durability experiment does not change this architecture or its claim boundaries.

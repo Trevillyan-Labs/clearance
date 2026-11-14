@@ -1,5 +1,5 @@
 ---
-status: accepted prototype scope; implementation in progress
+status: core verified with stated coverage; release deliverables pending
 owner: bill
 last_verified: 2026-11-14
 ---
@@ -25,7 +25,7 @@ The three-minute video is a creative target, not an exact verified duration requ
 
 Engagement and sensitivity are independent. Four classes: Public, Internal, Confidential and Restricted. A worker belongs to exactly one client for its lifetime. Higher clearance never changes the client. A principal authorized for both clients starts separate workers; contexts are not switched or merged.
 
-The brain is one synthetic Markdown wiki, indexed in one HydraDB database with client-specific collection namespaces. Each file has owner, class and version labels. Workers receive admitted passages, never the whole wiki checkout. Git branches organize development and do not separate confidential information. The approved synthetic methodology pack is copied into both client corpora; no generated content becomes shared learned memory. The metadata-only coordinator never sees client document bodies, generated apps or acceptance answers.
+The brain is one synthetic Markdown wiki, indexed in one HydraDB database with client-specific collection namespaces. Each file has owner, class and version labels. Workers receive admitted complete document bodies, never the whole wiki checkout. Search ranking selects document IDs; it does not forward vendor snippets or use passage-level permissions. Git branches organize development and do not separate confidential information. The approved synthetic methodology pack is copied into both client corpora; no generated content becomes shared learned memory. The metadata-only coordinator never sees client document bodies, generated apps or acceptance answers.
 
 Artifacts retain client ownership and the highest classification of all observed inputs, including uncited sources. Client previews and downloads are scoped destinations, not public release.
 
@@ -54,7 +54,7 @@ No arbitrary code execution, general tools, dynamic wiki writes, user uploads, a
 
 ## Evidence and current state
 
-Build is authorized under the compressed prototype process. Thirteen local checks pass for corpus validation, store boundaries, HydraDB request/response shaping, workflow behavior and export. These are not live service or browser acceptance. HydraDB account/API setup, real coordinator/worker generation, UI integration and the complete rehearsal remain pending at this checkpoint. A promo offer is not a credential.
+The core is verified with stated coverage: a final production run repeated real HydraDB/model generation, scoped grants, independent checks and both client deliveries. Production browser app behavior, wrong-client attachment and HTML/JSON downloads were checked. Fresh reassignment, actual source edges, threshold-boundary cases and blank reset were observed in development; reassignment/reset were not repeated in the final production run. Video capture, public release and submission are still pending. The [test plan](test-plan.md) owns the exact evidence and limits.
 
 Measure actual scoped reads/denials, grants, generation, client tests, fresh runs and delivery. Inspect constructed model inputs; absence of a secret string in final output alone is insufficient. Recorded video can use labeled time cuts, never invented completion states. No universal zero-leakage or production-security guarantee is claimed.
 

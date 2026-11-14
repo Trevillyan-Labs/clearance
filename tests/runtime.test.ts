@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { join } from 'node:path';
-import { Runtime } from '../lib/runtime';
+import { Runtime,delegation } from '../lib/runtime';
 import { Store } from '../lib/store';
 import { loadBrain } from '../lib/brain';
 import type { Message } from '../lib/model';
@@ -10,6 +10,12 @@ import type { Engagement } from '../lib/types';
 const docs = () => loadBrain(join(process.cwd(), 'brain'));
 const call = (name: string, args: unknown): Message => ({role:'assistant',content:null,tool_calls:[{id:`call-${name}`,type:'function',function:{name,arguments:JSON.stringify(args)}}]});
 const workflow = (engagement: Engagement) => ({title:'Purchase approval workflow',currency:'USD',thresholdCents:engagement==='beacon'?5_000_000:10_000_000,belowApprovers:['Department Manager'],atOrAboveApprovers:engagement==='beacon'?['Procurement','CFO']:['Procurement']});
+test('coordinator delegation requires one typed call with exactly the two permitted C2 workers',()=>{
+ const workers=[{engagementId:'beacon',clearance:2},{engagementId:'crest',clearance:2}];
+ assert.deepEqual(delegation(call('delegate_workers',{workers})),workers);
+ assert.throws(()=>delegation({role:'assistant',content:'No.'}));
+ for(const invalid of [[workers[0],workers[0]],[workers[0],{engagementId:'crest',clearance:3}],[workers[0],{engagementId:'other',clearance:2}],[workers[0],{...workers[1],context:'foreign'}]])assert.throws(()=>delegation(call('delegate_workers',{workers:invalid})));
+});
 async function settled(condition: () => boolean) {
   for (let attempt=0;attempt<100;attempt++) { if(condition())return; await new Promise<void>(resolve=>setImmediate(resolve)); }
   assert.fail('Runtime did not reach its expected state');

@@ -1,14 +1,17 @@
 # Outstanding work
 
-- [x] Record Bill's authorization of the revised consulting scope and compressed prototype process, including same-client grants and a simple source graph.
-- [x] Write the lean test/build plans with the approximately 04:21 Pacific start reference and noon target.
-- [x] Implement synthetic wiki parser, client-bound policy/store, scoped grants and workflow/export logic; local verification is recorded in the test plan.
-- [ ] Complete HydraDB account/API setup; promo information is not a credential. Qualify real one-database/client-collection ingestion and scoped search.
-- [x] Implement metadata-only coordinator and independent worker tool loops; model-only trial generated both apps with fixture retrieval, separately labeled from live index acceptance.
-- [x] Integrate two-room UI, recorded-input graph, grant/deny controls, scoped downloads and fresh reassignment. Full live interaction acceptance remains below.
-- [ ] Run both real generated apps and required boundary cases through browser/UI routes; typecheck/build and reset/repeat.
-- [ ] Rehearse one polished core by noon Pacific November 14; prepare the three-minute story and capture/edit/upload video before submission.
-- [ ] Review tracked public contents and dependency licenses; publish MIT source before the submission deadline.
-- [x] Add a second presentation variant using the same working system: Workspace and Stage views.
-- [x] Run isolated optional Temporal pause/restart/resume experiment; record its durability evidence and limits. No core migration.
-- [ ] Stretch after core: dynamic reclassification or client-only policy change/rebuild. No implied commitment before noon.
+- [x] Record the authorized consulting prototype, compressed process, scoped grants, actual source graph and one polished core.
+- [x] Prepare requirements/design and lean test/build plans; exact evidence is centralized in the test plan.
+- [x] Implement the labeled wiki, client-bound store/grants, compiler, controls and bounded retry.
+- [x] Qualify real HydraDB retrieval in database default-tenant with client_beacon/client_crest collections. Queued status remains a documented limit, not completed graph indexing.
+- [x] Pass the final consolidated source tests and production build; start the production application locally.
+- [x] Repeat the complete live production pair with actual scoped search, grants, independent checks and both client deliveries.
+- [x] Verify actual production browser forms, cross-client challenge and HTML/JSON downloads, including wrong-client refusal.
+- [x] Record development-only threshold-boundary, fresh-reassignment, source-edge and reset evidence without claiming those were all repeated in production.
+- [x] Save production receipt, screenshots and both clients' standalone HTML/JSON artifacts.
+- [x] Provide Workspace and Stage views of the same core.
+- [x] Record the isolated Temporal pause/restart/resume experiment without adding it to the core.
+- [ ] Capture, review and upload the three-minute video. The browser CDP attempt stalled and produced no final video.
+- [ ] Review tracked public contents and dependency licenses; publish the MIT repository.
+- [ ] Complete hackathon submission before its deadline.
+- [ ] Stretch only after core: dynamic reclassification or client-only policy change/rebuild. No implied noon commitment.

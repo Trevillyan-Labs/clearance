@@ -1,0 +1,487 @@
+{
+  "recorded_at": "2026-11-14",
+  "mode": "production build, real HydraDB and xAI",
+  "database": "default-tenant",
+  "collections": [
+    "client_beacon",
+    "client_crest"
+  ],
+  "events": [
+    {
+      "id": "cf76406a-8edd-4513-8c20-33bb7a8ae7c8",
+      "type": "indexing_started",
+      "message": "Indexing the labeled Markdown brain into two client collections in one database",
+      "timestamp": "2026-11-14T14:01:07.138Z"
+    },
+    {
+      "id": "6daf46c9-9b91-46a3-b234-a3e01f856823",
+      "type": "indexing_completed",
+      "message": "HydraDB scoped search verified for every expected source",
+      "timestamp": "2026-11-14T14:01:09.758Z"
+    },
+    {
+      "id": "19781fb4-633c-4bcd-87c8-59ebc827d526",
+      "type": "coordinator_planned",
+      "message": "Metadata-only coordinator proposed two bounded, client-specific workers",
+      "timestamp": "2026-11-14T14:01:11.252Z"
+    },
+    {
+      "id": "a6eb7a76-b3bd-4a5e-a77d-d8073c8a2373",
+      "type": "worker_started",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "beacon worker started at class 2",
+      "timestamp": "2026-11-14T14:01:11.253Z"
+    },
+    {
+      "id": "02a0cea2-1fc7-4cd1-af81-64b53ef9a84b",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "starting",
+      "timestamp": "2026-11-14T14:01:11.254Z"
+    },
+    {
+      "id": "5ca2e9b5-93a1-4317-a3da-3edc08b9ab9a",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "generating",
+      "timestamp": "2026-11-14T14:01:11.255Z"
+    },
+    {
+      "id": "bd299d2f-5a16-4dea-855c-a0d1fa025d0c",
+      "type": "worker_started",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "crest worker started at class 2",
+      "timestamp": "2026-11-14T14:01:11.256Z"
+    },
+    {
+      "id": "49a393dd-cbfd-4905-9c03-a11d99cb7d97",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "starting",
+      "timestamp": "2026-11-14T14:01:11.256Z"
+    },
+    {
+      "id": "968e8c9a-e855-4e91-b830-8da858c97a6d",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "generating",
+      "timestamp": "2026-11-14T14:01:11.257Z"
+    },
+    {
+      "id": "8504e11a-0a07-4bdb-90a8-5fd07a3e6893",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "searching",
+      "timestamp": "2026-11-14T14:01:12.758Z"
+    },
+    {
+      "id": "3649cfeb-909c-4d3d-9ddd-5df1a756400b",
+      "type": "read_admitted",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-brief",
+      "timestamp": "2026-11-14T14:01:13.056Z"
+    },
+    {
+      "id": "aa4cc95f-5995-4aa5-bbb3-f590557dc942",
+      "type": "read_admitted",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-approvals",
+      "timestamp": "2026-11-14T14:01:13.056Z"
+    },
+    {
+      "id": "5066a745-3e3c-4b36-b261-83701ca54215",
+      "type": "read_admitted",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-methodology",
+      "timestamp": "2026-11-14T14:01:13.058Z"
+    },
+    {
+      "id": "b1f9b3ef-523d-4ec6-b61e-771ce9fde413",
+      "type": "read_admitted",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-operations",
+      "timestamp": "2026-11-14T14:01:13.058Z"
+    },
+    {
+      "id": "e2161394-da63-4cb2-9e97-40ef8a466220",
+      "type": "search_completed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "HydraDB returned 5 source IDs; 4 authorized sources admitted",
+      "timestamp": "2026-11-14T14:01:13.058Z"
+    },
+    {
+      "id": "c21f0213-9bc0-4deb-ad56-0d23ec5bec79",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "generating",
+      "timestamp": "2026-11-14T14:01:13.058Z"
+    },
+    {
+      "id": "3755c21e-9f7e-43a1-842f-f8689c7534d5",
+      "type": "grant_requested",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-thresholds",
+      "message": "One read, one worker, same client, five minutes",
+      "timestamp": "2026-11-14T14:01:14.519Z"
+    },
+    {
+      "id": "272b144d-a3aa-4f3d-8d56-b621b32cb5ae",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "awaiting_grant",
+      "timestamp": "2026-11-14T14:01:14.520Z"
+    },
+    {
+      "id": "dd2f917c-9d74-405b-b3c3-0eadc5686ed7",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "searching",
+      "timestamp": "2026-11-14T14:01:15.391Z"
+    },
+    {
+      "id": "b83c341d-ebb2-40b8-9550-212b5f1dde83",
+      "type": "read_admitted",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-brief",
+      "timestamp": "2026-11-14T14:01:15.752Z"
+    },
+    {
+      "id": "8639d433-7d1d-40ed-8a9d-3125abec83c9",
+      "type": "read_admitted",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-approvals",
+      "timestamp": "2026-11-14T14:01:15.753Z"
+    },
+    {
+      "id": "d55f5d2f-6ca1-461e-80b2-d61f9f6731a6",
+      "type": "read_admitted",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-methodology",
+      "timestamp": "2026-11-14T14:01:15.754Z"
+    },
+    {
+      "id": "d58a3a3b-d3b7-40dc-b8ed-be4fdfc656aa",
+      "type": "read_admitted",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-operations",
+      "timestamp": "2026-11-14T14:01:15.754Z"
+    },
+    {
+      "id": "92af7bff-738d-4aa5-a0e4-b21e3a406e11",
+      "type": "search_completed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "HydraDB returned 5 source IDs; 4 authorized sources admitted",
+      "timestamp": "2026-11-14T14:01:15.755Z"
+    },
+    {
+      "id": "1f53ac3f-b46e-4981-ae29-ea9321fe9a73",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "generating",
+      "timestamp": "2026-11-14T14:01:15.756Z"
+    },
+    {
+      "id": "c0eb3e41-ff4e-4c6d-8a9b-81aa634ba313",
+      "type": "grant_requested",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-thresholds",
+      "message": "One read, one worker, same client, five minutes",
+      "timestamp": "2026-11-14T14:01:22.461Z"
+    },
+    {
+      "id": "0bb02fe5-4d2c-4dee-8ab8-42c75b0a48e7",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "awaiting_grant",
+      "timestamp": "2026-11-14T14:01:22.461Z"
+    },
+    {
+      "id": "fce9c71d-cb90-487c-816f-3c1f47fffb6d",
+      "type": "grant_approved",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-thresholds",
+      "timestamp": "2026-11-14T14:02:11.539Z"
+    },
+    {
+      "id": "b414dd0a-2cad-4621-bfcc-9db802038fe5",
+      "type": "grant_consumed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-thresholds",
+      "timestamp": "2026-11-14T14:02:11.539Z"
+    },
+    {
+      "id": "d300bef1-a64c-41ae-a70f-e7fb5e2b1e12",
+      "type": "read_admitted",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "beacon-thresholds",
+      "timestamp": "2026-11-14T14:02:11.539Z"
+    },
+    {
+      "id": "1efec755-6de2-4a94-a9f5-d64070e841b6",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "generating",
+      "timestamp": "2026-11-14T14:02:11.540Z"
+    },
+    {
+      "id": "c36760c1-6114-4d7f-9698-896b85c433ba",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "testing",
+      "timestamp": "2026-11-14T14:02:13.013Z"
+    },
+    {
+      "id": "9341bf63-0f98-435d-879c-a69ddc73d599",
+      "type": "artifact_created",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "artifactId": "56a368f2-9823-40ac-a6fa-2489189b9748",
+      "message": "Independent checks passed",
+      "timestamp": "2026-11-14T14:02:13.014Z"
+    },
+    {
+      "id": "ad5240cd-85e0-4d80-837d-535350d10f7b",
+      "type": "phase_changed",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "ready",
+      "timestamp": "2026-11-14T14:02:13.014Z"
+    },
+    {
+      "id": "45d783f8-404e-44b8-9444-28154734e93b",
+      "type": "grant_approved",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-thresholds",
+      "timestamp": "2026-11-14T14:02:17.886Z"
+    },
+    {
+      "id": "7d265572-b564-4209-9961-66e2ba5f1980",
+      "type": "grant_consumed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-thresholds",
+      "timestamp": "2026-11-14T14:02:17.886Z"
+    },
+    {
+      "id": "d2694c2e-8546-468b-af20-daaddf8a626b",
+      "type": "read_admitted",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "docId": "crest-thresholds",
+      "timestamp": "2026-11-14T14:02:17.886Z"
+    },
+    {
+      "id": "fe276b24-e5bf-44ce-9a06-ceacbf9c700b",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "generating",
+      "timestamp": "2026-11-14T14:02:17.886Z"
+    },
+    {
+      "id": "6e4fd378-307f-4c97-af18-669f40734413",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "testing",
+      "timestamp": "2026-11-14T14:02:19.557Z"
+    },
+    {
+      "id": "63ea4a2f-f6b6-40c8-9638-5e50137f9662",
+      "type": "artifact_created",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "artifactId": "b5a9ee7e-49cd-4ade-98e2-8080a85b207a",
+      "message": "Independent checks passed",
+      "timestamp": "2026-11-14T14:02:19.558Z"
+    },
+    {
+      "id": "60ba7505-a01e-4de9-b4f6-c0e4d907c6a9",
+      "type": "phase_changed",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "message": "ready",
+      "timestamp": "2026-11-14T14:02:19.558Z"
+    },
+    {
+      "id": "c2abcadb-ef59-4db9-b8d6-26315a58df01",
+      "type": "artifact_delivered",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "artifactId": "56a368f2-9823-40ac-a6fa-2489189b9748",
+      "timestamp": "2026-11-14T14:02:38.584Z"
+    },
+    {
+      "id": "06941a7f-c434-4c8c-9cbd-22e68dd9142b",
+      "type": "artifact_delivered",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "artifactId": "b5a9ee7e-49cd-4ade-98e2-8080a85b207a",
+      "timestamp": "2026-11-14T14:02:44.216Z"
+    },
+    {
+      "id": "907fb2a9-c452-48e3-a446-1d50618d08df",
+      "type": "read_denied",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "docId": "crest-thresholds",
+      "message": "Read refused before model context admission",
+      "timestamp": "2026-11-14T14:02:59.414Z"
+    },
+    {
+      "id": "ab7e22f8-02c4-4b62-b75b-220226fdd986",
+      "type": "cross_client_blocked",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "message": "Attempted other-client attachment refused before model context admission",
+      "timestamp": "2026-11-14T14:02:59.414Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "56a368f2-9823-40ac-a6fa-2489189b9748",
+      "runId": "58c3ac62-4fd6-42a4-a490-7a418bdb2132",
+      "engagementId": "beacon",
+      "inheritedClass": 3,
+      "workflow": {
+        "title": "Purchase approval workflow",
+        "currency": "USD",
+        "thresholdCents": 5000000,
+        "belowApprovers": [
+          "Department Manager"
+        ],
+        "atOrAboveApprovers": [
+          "Procurement",
+          "CFO"
+        ]
+      },
+      "checks": [
+        {
+          "name": "$0 purchase",
+          "passed": true,
+          "expected": [
+            "Department Manager"
+          ],
+          "actual": [
+            "Department Manager"
+          ]
+        },
+        {
+          "name": "$49,999.99 purchase",
+          "passed": true,
+          "expected": [
+            "Department Manager"
+          ],
+          "actual": [
+            "Department Manager"
+          ]
+        },
+        {
+          "name": "$50,000 threshold purchase",
+          "passed": true,
+          "expected": [
+            "Procurement",
+            "CFO"
+          ],
+          "actual": [
+            "Procurement",
+            "CFO"
+          ]
+        },
+        {
+          "name": "$75,000 purchase",
+          "passed": true,
+          "expected": [
+            "Procurement",
+            "CFO"
+          ],
+          "actual": [
+            "Procurement",
+            "CFO"
+          ]
+        },
+        {
+          "name": "$100,000 purchase",
+          "passed": true,
+          "expected": [
+            "Procurement",
+            "CFO"
+          ],
+          "actual": [
+            "Procurement",
+            "CFO"
+          ]
+        }
+      ],
+      "state": "delivered",
+      "createdAt": "2026-11-14T14:02:13.014Z",
+      "deliveredAt": "2026-11-14T14:02:38.584Z"
+    },
+    {
+      "id": "b5a9ee7e-49cd-4ade-98e2-8080a85b207a",
+      "runId": "86979a47-c147-47e6-8fd9-902b0fbdb3ad",
+      "engagementId": "crest",
+      "inheritedClass": 3,
+      "workflow": {
+        "title": "Purchase approval workflow",
+        "currency": "USD",
+        "thresholdCents": 10000000,
+        "belowApprovers": [
+          "Department Manager"
+        ],
+        "atOrAboveApprovers": [
+          "Procurement"
+        ]
+      },
+      "checks": [
+        {
+          "name": "$0 purchase",
+          "passed": true,
+          "expected": [
+            "Department Manager"
+          ],
+          "actual": [
+            "Department Manager"
+          ]
+        },
+        {
+          "name": "$75,000 purchase",
+          "passed": true,
+          "expected": [
+            "Department Manager"
+          ],
+          "actual": [
+            "Department Manager"
+          ]
+        },
+        {
+          "name": "$99,999.99 purchase",
+          "passed": true,
+          "expected": [
+            "Department Manager"
+          ],
+          "actual": [
+            "Department Manager"
+          ]
+        },
+        {
+          "name": "$100,000 threshold purchase",
+          "passed": true,
+          "expected": [
+            "Procurement"
+          ],
+          "actual": [
+            "Procurement"
+          ]
+        },
+        {
+          "name": "$100,000.01 purchase",
+          "passed": true,
+          "expected": [
+            "Procurement"
+          ],
+          "actual": [
+            "Procurement"
+          ]
+        }
+      ],
+      "state": "delivered",
+      "createdAt": "2026-11-14T14:02:19.557Z",
+      "deliveredAt": "2026-11-14T14:02:44.216Z"
+    }
+  ],
+  "budget": {
+    "requests": 26,
+    "reservedDollars": 0.45532199999999995,
+    "inputTokens": 49833,
+    "outputTokens": 660
+  }
+}
