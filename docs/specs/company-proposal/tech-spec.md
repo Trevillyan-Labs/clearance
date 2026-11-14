@@ -16,10 +16,10 @@ Grant approval is a local operator action. The pricing worker may request only t
 Strict role schemas bound every contribution. Assembly selects shared roles and exactly one client role, never the other client's contribution. It inherits admitted source restrictions and compiles escaped data into a fixed interactive HTML calculator. Commercial-policy reviewer separately supplies constraints, checked against pricing contribution. Margin decisions use exact integer arithmetic.
 
 ## Deployment view
-Implemented: browser and one persistent local Node process, local Markdown and SQLite, remote HydraDB and model API.
-Proposed: Vercel frontend calls a persistent authenticated orchestrator. Remote Boat VMs would run delegated workers and call the same policy gateway. VMs would receive scoped capabilities, not HydraDB administrator credentials or the entire brain. Temporal is an independently tested experiment, not part of the implemented orchestration.
+Implemented: Vercel UI and authenticated proxy reach a persistent Mac Node process through a temporary authenticated tunnel and gateway. Markdown and SQLite remain local; HydraDB and the model API are remote. See [hosted deployment decisions and verification](../hosted-demo/decision.md).
+Proposed: Remote Boat VMs would run delegated workers and call the same policy gateway. VMs would receive scoped capabilities, not HydraDB administrator credentials or the entire brain. Temporal is an independently tested experiment, not part of the implemented orchestration.
 
-The current localhost guard is retained. Public deployment requires authentication and persistent runtime/storage adaptation; merely publishing current routes is not acceptable.
+The localhost guard is retained behind the gateway. The hosted demo requires Vercel authentication and the Mac, gateway and tunnel to remain running. Durable hosting and a custom domain remain follow-on work; merely publishing the local routes is not sufficient.
 
 ## Prototype checks
 Policy tests cover scope before class, grant consumption/expiry, output inheritance and audience. Compiler tests cover exact financial boundaries and foreign-client exclusion. Live qualification must exercise real Hydra retrieval, five model workers, approval resume, both calculators and browser architecture/comparison views. State and browser evidence must distinguish implemented behavior from future topology.
