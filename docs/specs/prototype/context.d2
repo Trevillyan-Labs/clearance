@@ -1,0 +1,10 @@
+direction: right
+operator: "Operator" {shape: person}
+clearance: "[NEW] Clearance"
+hydra: "[EXTERNAL] HydraDB"
+model: "[EXTERNAL] Model provider"
+viewer: "Public viewer" {shape: person}
+operator -> clearance: "Mission, clearance, grant, classification"
+clearance -> hydra: "Synthetic ingestion and scoped search"
+clearance -> model: "Permitted context and generation"
+clearance -> viewer: "Released page only"

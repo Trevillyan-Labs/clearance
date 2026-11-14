@@ -1,0 +1,29 @@
+direction: down
+browser: "Local browser" {
+ console: "[NEW] Operator console"
+ public: "[NEW] Public page"
+}
+host: "Local Node process" {
+ api: "[NEW] Authenticated control API"
+ workers: "[NEW] Three model contexts"
+ broker: "[NEW] Search and read mediator"
+ state: "[NEW] SQLite policy, inputs, artifacts" {shape: cylinder}
+ fixtures: "[NEW] Immutable synthetic corpus"
+ publish: "[NEW] Atomic publication and renderer"
+}
+external: "External services" {
+ hydra: "[EXTERNAL] HydraDB ranked search"
+ model: "[EXTERNAL] Model provider"
+}
+browser.console -> host.api: "Same-origin commands and state"
+host.api -> host.workers: "Spawn with assigned authority"
+host.workers -> host.broker: "Query only"
+host.broker -> external.hydra: "Fixed scope and nonempty ACL"
+host.broker -> host.fixtures: "Ranked IDs to canonical bodies"
+host.broker -> host.state: "Check policy and record reads"
+host.workers -> external.model: "Permitted context and structured output"
+host.workers -> host.state: "Inputs and drafts"
+host.api -> host.state: "Grant and reclassify"
+host.api -> host.publish: "Publication request"
+host.publish -> host.state: "Check and commit atomically"
+host.publish -> browser.public: "Released escaped content only"
