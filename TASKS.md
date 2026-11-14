@@ -1,9 +1,10 @@
 # Outstanding work
 
-- [ ] Accept the prototype decision page and compressed implementation path.
-- [ ] Qualify HydraDB ingestion and attributable ranked results with synthetic sentinels.
-- [ ] Qualify an available model provider with independent contexts; record model ID and pinned dependency versions.
-- [ ] Write the small test plan and phased build plan after decision-page acceptance.
-- [ ] Build and rehearse the complete mission before noon Pacific, November 14, 2026.
-- [ ] Review tracked contents and dependency licenses before public release; publish MIT source for submission.
-- [ ] Use Software Factory for build work orders if access is available; do not claim unimplemented runtime integration.
+- [ ] Accept revised consulting scope; prior build approval was not given.
+- [ ] Qualify HydraDB client scoping and source admission with synthetic sentinels.
+- [ ] Qualify model access, fresh contexts and accepted inference budget.
+- [ ] Write lean test/build plans after revised page acceptance.
+- [ ] Build two tested standalone approval apps, denial, scoped delivery and fresh reassignment.
+- [ ] Rehearse by noon Pacific November 14; capture/edit/upload the short video before submission.
+- [ ] Review public contents/dependency licenses and publish MIT source before 3:15 p.m. Pacific.
+- [ ] Stretch only: Beacon-only change/rebuild; Crest unchanged.

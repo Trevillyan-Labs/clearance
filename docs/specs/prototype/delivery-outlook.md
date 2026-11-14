@@ -1,19 +1,15 @@
-# Delivery outlook, November 14 Pacific
+# Revised noon delivery outlook
 
-Proposed estimate, not an approved build plan or guarantee. At approximately 03:00 there were nine hours to noon. Drafting consumes part of that window. Estimate 6 to 7 hours for implementation with limited polish and reserve, conditional on working service access.
+Draft estimate, not an approved build plan or delivery guarantee. Approximately 5 to 7 implementation hours after service access works, plus final video capture/editing. Reassessment has consumed part of the original window. Recompute actual remaining time when scope is accepted; do not retain stale clock promises.
 
-| Target PT | Outcome | If late |
-|---|---|---|
-| 04:00 | Decision accepted; two sentinel documents queried | Resolve access first, no fake search replacement. |
-| 05:15 | Filtered search, separate workers, scoped grant | Cut optional inspection UI. |
-| 07:00 | Three artifacts, inherited classes, publication | Retain fixed renderer; no arbitrary code generation. |
-| 08:30 | Reclassification, stale-result handling, recovery | Stop other features until hero loop works. |
-| 10:00 | Console and graph show real state | Fixed layout; no elaborate animation. |
-| 11:00 | Live rehearsal and repeat | Freeze scope; fix demo failures. |
-| 12:00 | Demonstrable local version and instructions | Report unmet requirements explicitly. |
+1. First 30 to 45 minutes: ingest one sentinel per client; confirm collection scoping, source attribution, independent model calls and denied wrong-client admission. If access fails, resolve it before UI work.
+2. Next 60 to 90 minutes: immutable client runs, permission broker and the first real generated workflow passing independent client fixtures.
+3. Next 60 to 90 minutes: second client app, scoped delivery, same-transaction contrast, wrong-client attachment and fresh reassignment.
+4. Next 60 to 90 minutes: two-room UI, actual source trails, input inspector and visible test results.
+5. Remaining 45 to 60 minutes: focused boundary review, full live rehearsal, reset/repeat and capture-ready scene. Freeze optional features before 11:00 Pacific if possible.
 
-Testing estimate: 15 to 20 percent of implementation effort, plus rehearsal; no new testing framework. Detailed test and build plans follow page acceptance.
+The primary deliverable by noon is a working, rehearsable demo. The video script is three minutes; published rules require a short video but do not state exactly three minutes in the retrieved text. Capture/edit/upload remains separate before the 3:15 p.m. submission deadline.
 
-After approval, split policy/search/state and UI/renderer across two builders; coordinator owns workers/integration/rehearsal. Core claims stay: real search, enforced read boundary, generated output, live intervention and fresh recovery. Reduce polish before changing those outcomes. Any cut to the three-worker hero sequence is an explicit scope decision.
+Scope cuts already proposed: two initial workers plus one replacement, one domain-specific app type, no grants or live reclassification, no giant graph. Do not cut real HydraDB search, actual application behavior, client boundary checks or fresh-context evidence. No generic consulting-memo fallback is presented as equivalent software-factory theme compliance.
 
-Defaults: Lantern, a fictional team-planning product, twelve invented documents, four classes, local TypeScript app, fixed scene. Potential operator input: missing service access or a decision if core integration fails. No private assets requested.
+After scope acceptance, create the lean test/build plans and divide backend/broker from UI/interpreter. Test effort stays around 15 to 20 percent, plus rehearsal. One implementation pass with targeted independent review; no elaborate testing infrastructure. Service credentials, token budget and exact model still need qualification.

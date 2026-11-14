@@ -1,101 +1,83 @@
 ---
-status: proposed technical design
+status: revised proposed design, not approved or implemented
 owner: bill
 last_verified: 2026-11-14
 ---
-# Clearance technical design
+# Clearance: immutable engagement workers
 
 ## One page for Bill
 
-Build one local web application where three agents use different clearances to search an invented company brain and create a landing page, sales brief and pricing recommendation. A judge changes one document's classification, watches affected pending publication stop, then watches a fresh permitted worker finish the job.
+Build two working vendor-approval mini-apps for a fictional consulting firm's clients. The same task and same transaction yield different correct behavior because each worker sees only its client's policy. Show an attempted cross-client read rejected, then demonstrate that reassigning the consultant role starts a fresh context.
 
-1. **Real HydraDB search, application-owned policy.** HydraDB stores and ranks synthetic documents. The server accepts ranked IDs and supplies permitted text from the same immutable fixture corpus. This avoids trusting enriched retrieval text or index freshness for authorization. It commits us to a small fixed corpus, not a general document platform.
-2. **Controlled workers.** Each is a separate model context with search, scoped access request and structured artifact submission. No shell, browsing, direct database key or arbitrary code execution. This is a bounded application demonstration, not a computer sandbox.
-3. **Real local publication boundary.** SQLite owns policy, observed inputs and artifacts. Permission check and publication commit are atomic. A fixed renderer turns generated structured content into a page. No external hosting or email dependency.
-4. **Narrow exception and fresh recovery.** Read grant is one run, source version and use before expiry. It never authorizes disclosure. A classification change invalidates dependent work. Recovery starts a fresh Public context without old drafts/history.
-5. **Independent MIT implementation.** New source and invented fixtures only. Review tracked contents and dependency licenses before making the repository public. No private source, schema, prompt, test, transcript or design document is copied into it.
-6. **Low operator burden.** Default the company, story, stack, roles and UI. Ask for service access only if existing access is unavailable. Proposed application inference budget: at most 100 requests and 250,000 input / 40,000 output tokens for build/rehearsal, plus a $20 ceiling if selected-provider pricing can be verified. Proposed ceiling, not an executed transaction or verified estimate; no purchase/upgrade. Stop before exceeding the accepted budget.
+1. **One engagement per worker, forever.** Bind client, clearance and destination at spawn. No switch-client tool and no cross-client grant. This removes a major class of contamination paths rather than adding approval screens.
+2. **One HydraDB collection per client.** The trusted server fixes query scope and checks every returned source again before context admission. Approved common methodology is copied into each small corpus. Higher clearance never changes collection. Account credentials remain server-only.
+3. **Generate a bounded application.** The model writes an approval-workflow configuration. A deterministic compiler emits a standalone HTML app using a small trusted runtime; independent fixture cases check behavior. No arbitrary model-generated scripts execute. The downloadable app, configuration and functioning form show exactly what was built.
+4. **One local application and state store.** Next.js/TypeScript plus SQLite, two client lanes and client-scoped previews. Local policy and input manifests remain explicit. No general policy engine, graph database, event bus, cloud deployment or shared memory.
+5. **New MIT work only.** Invented clients/documents and fresh code. The repository stays private until public-content/dependency review. No proprietary assets are copied. Use existing service access; the previously proposed $20 application-inference ceiling remains a proposal, not approval or a purchase.
+6. **Reduced noon scope.** Two initial workers and one fresh replacement, one app type, cross-client denial, actual model-input inspection, behavior tests and matching-client delivery. Dynamic reclassification and scoped read grants move out of the noon slice. The same sensitivity checks still apply to every read.
 
-One-off prototype. Policy/publication deserve clear interfaces and focused correctness checks; fixture tooling, graph layout and local UI are disposable. No production maintenance commitment. [Delivery outlook](delivery-outlook.md) owns estimates. Acceptance selects this approach; live integration still needs qualification.
+One-off demo, with focused rigor on read/delivery boundaries and actual generated behavior. No production-security or general app-generation promise. No build authority inferred from the request to improve this design. [Delivery outlook](delivery-outlook.md) owns estimates.
 
-## Approach and baseline
+## Approach and measured baseline
 
-New Next.js/React/TypeScript app, one local Node process, SQLite state, HydraDB search, one tool-capable model provider. All application components are new. Exact package versions and model ID will be pinned after the initial integration check.
+A trusted local server owns two engagement contexts. HydraDB ranks documents in a fixed client collection. The broker accepts only attributable source IDs, resolves them to canonical immutable synthetic bodies, checks client and sensitivity, and records every admitted input. The model emits a bounded workflow configuration. Validation, independent behavior checks and client-scoped delivery produce the running mini-app. The operator UI reads state but does not orchestrate through a model that sees both clients.
 
-Verified baseline: new README/MIT repository, no application code, installed dependencies or successful service probe. Vendor documentation reviewed November 14. Credentials, model choice and latency are unresolved prerequisites, not assumed working.
+Baseline: private MIT repository and design documents only. No application code, live HydraDB probe, model connection or latency measurement. Separate collection scoping and source provenance are documented capabilities awaiting live qualification. A collection is an application scoping mechanism, not proof of vendor infrastructure isolation.
 
-![Workers access information through a trusted mediator, and publication checks current policy in one local transaction before serving a public page.](architecture.svg)
+![Client-bound workers use a trusted scope-checking broker; generated workflows are tested and delivered only into their matching client lane.](architecture.svg)
 
-Diagram legend: [NEW] identifies prototype components; [EXTERNAL] identifies existing vendor services. All depicted application components are new.
+Legend: [NEW] means prototype component; [EXTERNAL] means existing vendor service.
 
-## 1. Authority and state
+## 1. Immutable run and data contracts
 
-**1.1 Authority, a contract.** Server creates runId, missionId, clearance 0..3, allowed actions and status. Tools never accept identity, clearance, database scope or authority fields. Operator routes require a runtime random session cookie, same-origin checks and loopback binding; worker tools cannot reach them. Public route receives no operator state.
+**1.1 Run, a contract.** Trusted server creates runId, engagementId, clearance 0..3, fixed taskId, collection and destination. None is accepted from model tool arguments. No client rebinding of existing run. Control routes require local operator session and same-origin checks; bind loopback. Worker has no HTTP, filesystem, shell or broad MCP tool.
 
-**1.2 State, a contract.** SQLite tables: documents(id, contentVersion, policyVersion, class, bodyHash, fixturePath); runs(id, missionId, clearance, status); grants(id, runId, docId, contentVersion, policyVersion, expiresAt, consumedAt); observed_inputs(runId, docId, contentVersion, policyVersion, classAtRead); artifacts(id, runId, kind, json, inheritedClass, state); publications(id, artifactId); events(id, type, runId, docId, artifactId, timestamp). Immutable authored bodies; classification updates increment policyVersion. Unknown or missing policy is denied. No distributed queue or graph service.
+**1.2 State, a contract.** SQLite stores engagements(id,collection), documents(id,engagementId,contentVersion,class,bodyHash,fixturePath), runs(id,engagementId,clearance,status), observed_inputs(runId,docId,contentVersion,classAtRead), artifacts(id,runId,engagementId,inheritedClass,workflowJson,status), deliveries(id,artifactId,engagementId), events(id,runId,type,sourceId,artifactId,timestamp). Fixture contents/policy are immutable for an active demo session. Missing ownership/class or unknown ID fails closed. Source IDs cannot select arbitrary filesystem paths.
 
-**1.3 Read authorization, a control.** Permit source.class <= run.clearance or an unexpired, unused grant matching run and exact source content/policy versions. In one synchronous SQLite transaction, check current run/source authority, consume any grant and insert the observed input; no await separates those operations. Stale runs cannot resume. Dispatch only after admission succeeds, with a final synchronous stale-state check immediately before initiating the model request. Existing context remains classified after grant expiry. No self-approval or reuse at a lower clearance.
+**1.3 Admission, a control.** Require source.engagementId == run.engagementId AND source.class <= run.clearance AND active run. In one synchronous SQLite transaction validate and record observed input. Handoff only to that run's context. Denials return a generic reason with no other-client body/title. Sensitive details remain in privileged operator diagnostics. No global summary or cross-client cache. No cache at all in noon scope.
 
-## 2. HydraDB adapter
+**1.4 Ingestion, a control.** Separate manifest and fixture folder per client; validate unique versioned IDs and ownership before ingesting into its collection. Copy only the manually approved synthetic methodology fixture into both with client-owned IDs. No model-generated content may enter this shared pack. Ingested IDs/body hashes must match the canonical fixture manifest. Badly labeled source data is a known threat; sentinel checks cover intended routing, not automatic semantic classification.
 
-**2.1 Ingestion, a behaviour.** Twelve immutable invented documents, dedicated database/collection, stable versioned IDs, explicit ACL principals and metadata. Poll indexing status to completed. No connectors/private corpus. Local policy remains authoritative when index metadata lags.
+## 2. Retrieval and worker execution
 
-**2.2 Search, a contract.** search(runId, query) derives scope from server state. POST /query or verified SDK equivalent: type knowledge, query_by hybrid, mode fast, graph_context false, query_apps false; fixed database/collection and nonempty server-derived ACL containing permitted class principals. No missing/empty/wildcard ACL. Empty allowed scope returns empty without querying. Metadata filters may narrow results but never own authorization.
+**2.1 Search, a contract.** search_brain(query) is bound to server-owned run identity. Query exactly its fixed collection, type knowledge, mode fast, graph_context false, query_apps false and nonempty derived ACL for allowed class principals. Never accept collection IDs from the model or query multiple client collections. Never omit ACL or use wildcard. Empty scope yields empty without querying.
 
-Accept returned source IDs in ranked order only. Discard vendor text, titles, graph, summaries, extra context and raw errors. Map IDs to the immutable corpus; deduplicate preserving rank, drop unknown IDs, check current access, then return at most four canonical bodies totaling at most 12,000 characters. Each ID names the indexed content version and cannot select arbitrary paths. This is HydraDB-ranked retrieval with canonical local text. No local-search fallback. Generated content never uses raw vendor enrichment.
+HydraDB provides ranked IDs. Discard raw chunk text, titles, graph enrichment, summaries and vendor error bodies. Deduplicate IDs preserving rank, verify ownership/version/class against local manifest, and provide at most four permitted canonical bodies totaling 12,000 characters. An injected wrong-client ID in a vendor response is refused. This is real HydraDB retrieval/ranking with local canonical bodies, not a local-search fallback or vendor-authorized policy claim.
 
-**2.3 Exceptional read, a behaviour.** Worker requests fixed capability pricing-input, named in its Public task. Server maps it to a restricted source; only the operator sees that source's title/content. Approval creates a five-minute, one-use grant. The resumed capability read uses the canonical mapping and control 1.3, independent of search ranking. Other workers and baseline clearance stay unchanged.
+**2.2 Worker, a behaviour.** Separate explicit model histories, fixed synthetic task and permitted inputs only. No prior response/conversation ID, shared assistant memory or previous worker output. Tools: search_brain(query), submit_workflow(payload). At most six model requests per attempt, 20-second search/60-second model timeout, one bounded retry. Model/API exact version and costs pinned after service qualification. Only server counts budget; no upgrade/purchase on exhaustion.
 
-## 3. Workers
+**2.3 Demonstration of denial, a behaviour.** Operator can attempt to attach a source card to a run. This calls the exact same admission function as search, using trusted run/source IDs. Source contents never enter an LLM before that call. UI explains that this is an operator-triggered tool-boundary test, not a claimed autonomous model exploit. Wrong-client attachment is rejected even at Restricted clearance. The test remains visible and the valid run continues.
 
-**3.1 Generation, a behaviour.** Three independent bounded loops use search_brain(query), request_access(capability), submit_artifact(kind,payload). Public mission/role prompt plus admitted context only. Six model requests maximum per attempt, 20-second search timeout, 60-second model timeout. One transient-error retry within the cap. No shared history, prior response ID, persistent provider conversation, shell, network tool or general MCP. A worker awaiting approval pauses independently.
+**2.4 Fresh reassignment, a behaviour.** Reassign role ends the old run, retains its artifacts under its original client and creates a new run for the selected engagement. The new prompt is the public fixed task plus new-client admitted sources only. Never transfer old draft, summary, tool response or hidden continuation state. Ignore late results from ended runs. Same operator identity does not imply shared agent history.
 
-**3.2 Inheritance, a control.** Manifest includes all inputs admitted during the run. Artifact class is at least max(classAtRead, current source classes) across the entire manifest. Model citations/classes cannot lower it. No worker-to-worker outputs in this slice. No private draft streaming to the public route.
+## 3. Bounded software factory
 
-**3.3 Concurrent change, a behaviour.** Reclassification updates policyVersion and marks dependent runs/artifacts stale in one transaction. After asynchronous search, recheck policy before input admission and model dispatch. After model response, validate the full input manifest and insert the artifact in one synchronous SQLite transaction, with no intervening await. Changed versions yield stale/ineligible output. Cancel if possible and discard stale results regardless. Unrelated runs are not invalidated by a global epoch. Earlier provider observation cannot be undone.
+**3.1 Workflow schema, a contract.** Model outputs title (bounded text), currency=USD, thresholdCents (nonnegative bounded integer), belowApprovers and atOrAboveApprovers (nonempty unique arrays from Procurement, CFO, Department Manager). Unknown fields, role names, code, markup or external URLs are rejected. Fixed rule: amountCents < thresholdCents chooses belowApprovers, otherwise atOrAboveApprovers. Fixed input is an integer number of cents; UI parses currency without floating point ambiguity.
 
-**3.4 Output, a contract.** landing_page: title, subtitle, features (up to six heading/body pairs), ctaLabel. brief/recommendation: title, summary, bullets (up to eight), optional recommendation. Bounded plain-text fields, schema validation, escaped React rendering. No generated HTML, JavaScript, JSX, executable code or URLs. This creates a usable page using a fixed renderer, not arbitrary software generation.
+**3.2 Generated application, a behaviour.** Valid configuration creates an interactive purchase-amount form and routing/result view. Known interpreter applies generated threshold/roles. The compiler emits a standalone HTML app plus its JSON configuration, both through the client-scoped delivery gate. Embed validated configuration as inert JSON with HTML-sensitive characters escaped. Use one fixed trusted JavaScript runtime and textContent for model text. No model-authored executable code or raw HTML. No network calls, secrets or external assets in the exported app. This is domain-specific application compilation, not arbitrary software generation. The runtime is built during the hackathon; the generated definition supplies each client's behavior. Required-role approval buttons are explicitly simulated, not authenticated approver identities.
 
-## 4. Publication and recovery
+**3.3 Independent checking, a control.** Client-specific fixture cases are authored independently of generation and not handed to the model as expected answers. Cases cover below, exactly at and above the policy threshold; compare exact approver sets. The visible $75,000 example is an additional common transaction, not the only check. Exercise it in each exported HTML app in a browser too. The compiled app and checked routing function share the same runtime source; testing configuration alone does not establish that the exported UI works. Mutation of threshold/roles must fail at least one relevant boundary test. A failing configuration is shown as failing and not delivered; one bounded fresh regeneration may be attempted. Do not let model-generated tests certify its own output.
 
-**4.1 Publication, a control.** In one synchronous SQLite transaction, verify artifact/run not stale, exact source versions unchanged, current source classes Public, inherited class Public and payload valid; then commit publication. No awaited external action between check and write. Higher-class briefs stay operator-only. A read grant never bypasses publication checks.
+**3.4 Inheritance and delivery, a control.** Artifact engagement equals run engagement. Inherited class includes all admitted inputs, not final citations. In one synchronous transaction validate the run is active/completed-valid, all input IDs still belong to that engagement/version, workflow passes independent checks, and destination engagement equals artifact engagement; then record delivery. No asynchronous gap between check and commit. Preview and app/config download routes are scoped to the destination and reject guessed other-client artifact IDs. Downloaded client-confidential apps cannot be recalled. Delivery does not declassify an artifact. The local privileged operator can switch previews, but previews never receive other-client state.
 
-**4.2 Intervention, a behaviour.** Hold a real artifact before publication. Judge selects an actually contributing Public source and raises its class. Backend marks dependent work, emits events and refuses publication. Unrelated work remains eligible. The graph uses actual source-to-run-to-artifact edges, not inferred semantic relations.
+## 4. Interface, lifecycle and limits
 
-**4.3 Recovery, a behaviour.** New Public run gets original public mission/role only, never old draft, history, restricted refusal detail or continuation handle. It searches again and generates from remaining permitted documents. Keep at least two independent Public product facts documents after the intervention. Old artifact stays blocked.
+**4.1 Two rooms, a behaviour.** Beacon and Crest lanes contain documents, immutable worker assignment/clearance, actual input manifest, generated workflow and real test outcomes. Shared method appears as two approved copies from one fixed source. Visual trails come from admission events. Wrong attachment is rejected at the boundary; reassigning a role creates a visibly empty context before new sources enter. No giant force-directed graph.
 
-Already delivered output cannot be recalled. The hero demonstration is before publication. A changed policy may disable later serving, but never implies earlier recipients did not see it.
+**4.2 Reset, a behaviour.** New demo session interrupts active runs; new IDs are used. Late results cannot attach to new runs. Preserve prior artifacts/history, with no file deletion or reuse of a previous client's context. On restart, in-flight workers become interrupted. No persistent agent resume needed by noon.
 
-## 5. Interface and operations
+**4.3 Credentials and errors, a control.** Existing runtime secret manager only; no credential files, stdout or browser-exposed keys. No provider retention or training guarantees inferred from separate contexts. Missing HydraDB/model access is an early explicit blocker. No silent search replacement. Trusted operator/host remains able to inspect all synthetic data; this is not hostile-host isolation.
 
-**5.1 Console, a behaviour.** Mission at top; class-grouped sources left; worker cards and actual dependency graph center; artifacts right; compact event trail. Fixed graph layout, words plus colors. Controls: Run launch, Approve scoped read, Hold before publish, Reclassify, Publish, Recover, New run. Operator can inspect exactly admitted context. No workflow designer.
+## Minimal implementation map
 
-**5.2 Restart, a behaviour.** SQLite preserves policy/artifacts. In-flight runs become interrupted on restart, never automatically published. New run uses new IDs. Labeled synthetic-fixture reset interrupts active runs, expires pending grants and restores seed classes through monotonic policyVersion increments, never by replacing old version numbers. Preserve artifact states/history; new demonstration runs use new IDs. Reset deletes no historical files.
+All new: lib/db.ts (small state), lib/scope.ts (run/admission/delivery checks), lib/hydra.ts (scoped ingest/query), lib/workers.ts and lib/model.ts (fresh bounded contexts), lib/workflow.ts (schema/interpreter/checks), lib/compiler.ts (standalone HTML export), fixtures/beacon and fixtures/crest (corpus), fixtures/acceptance (independent cases), components/client-lanes.tsx and app/page.tsx (operator), app/client/[engagementId]/page.tsx (scoped preview), local authenticated API routes. Exact package versions await initial probe. No existing proprietary implementation is reused.
 
-**5.3 Failure, a control.** Missing access/index failure prevents the real integration and shows a sanitized setup error. Retrieve credentials at runtime through the existing secret manager or secure operator mechanism; never print, commit or write credentials. No browser-exposed secret configuration. Default bind loopback. Missing HydraDB access is an explicit blocker, not permission for a local substitute.
+## Alternatives and constraints
 
-## New file plan
+One collection with a mandatory client filter is flexible but has more opportunities for omission. Separate client collections plus immutable binding remove client selection from the worker surface. Still check each returned ID, since backend credentials can reach both collections and routing bugs remain possible. Four sensitivity levels stay as an independent comparison, not a general policy language.
 
-Proposed new files, not current implementation:
+Retain a tiny SQLite manifest for context/delivery evidence and lifecycle; cut grants, dynamic labels, graph engine, cross-client release and global orchestration intelligence. This is scope reduction, not a claim about sufficient controls for production consulting.
 
-- app/page.tsx, components/mission-console.tsx: console/graph.
-- app/published/[id]/page.tsx: public artifact renderer.
-- app/api/mission/route.ts, app/api/control/route.ts: operator commands.
-- app/api/state/route.ts: operator polling, once per second initially.
-- lib/db.ts, lib/policy.ts: schema, access/publication transactions.
-- lib/hydra.ts: seed/query adapter and response normalization.
-- lib/workers.ts, lib/model.ts: bounded loops and provider adapter.
-- lib/artifacts.ts: output schemas and rendering contract.
-- fixtures/company/*.md, fixtures/manifest.json: invented versioned corpus.
-- scripts/seed.ts: ingestion/readiness.
-- tests/: small ordinary-runner suite; test plan follows page acceptance.
+## Public references and unresolved facts
 
-## Alternatives and necessary mechanisms
-
-Native ACL alone depends on unmeasured indexing and response behavior. Per-class collections complicate live reclassification/grants. Selected proposal: ranked IDs plus authoritative local policy/canonical bodies. Adds one manifest, removes dependence on enriched answer provenance. Six mechanisms: run identity, mediated retrieval, scoped grant, observed-input inheritance, atomic publication, fresh recovery. Existing state also supplies the graph; no graph database or bus.
-
-## Sources and risks
-
-[HydraDB API guide](https://docs.hydradb.com/llms.txt) documents source IDs/chunks, ACL omission behavior, fast retrieval and indexing lifecycle. [Software Factory work orders](https://docs.8090.ai/modules/work-orders) supports the optional build-time work-order connection. Documentation is not live qualification.
-
-First-hour risks: access, indexing latency, class-principal matching and source attribution. Poor ranking can omit authorized sources. Provider receives permitted synthetic context; no local-only inference claim. Trusted host/operator can inspect every fixture. Hostile programs, side channels and arbitrary agents outside supplied tools are not covered. No production security certification is claimed.
+[NIST ABAC guidance](https://csrc.nist.gov/pubs/sp/800/162/upd2/final) supports separate subject/resource/action attributes. [HydraDB guide](https://docs.hydradb.com/llms.txt) documents collections, scoped retrieval and source IDs; live configuration remains untested. [Event rules](https://evolve-8090.devpost.com/rules) make software-building theme fit mandatory. No real consulting firm data, policies or endorsement are used.

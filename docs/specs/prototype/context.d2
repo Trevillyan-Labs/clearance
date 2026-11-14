@@ -1,10 +1,12 @@
 direction: right
-operator: "Operator" {shape: person}
+operator: "Consulting operator" {shape: person}
 clearance: "[NEW] Clearance"
-hydra: "[EXTERNAL] HydraDB"
+hydra: "[EXTERNAL] HydraDB client collections"
 model: "[EXTERNAL] Model provider"
-viewer: "Public viewer" {shape: person}
-operator -> clearance: "Mission, clearance, grant, classification"
-clearance -> hydra: "Synthetic ingestion and scoped search"
-clearance -> model: "Permitted context and generation"
-clearance -> viewer: "Released page only"
+beacon: "Beacon app"
+crest: "Crest app"
+operator -> clearance: "Two engagements; fixed build tasks"
+clearance -> hydra: "One client scope per query"
+clearance -> model: "Separate permitted contexts"
+clearance -> beacon: "Beacon-owned tested app"
+clearance -> crest: "Crest-owned tested app"

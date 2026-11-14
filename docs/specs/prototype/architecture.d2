@@ -1,29 +1,28 @@
 direction: down
-browser: "Local browser" {
- console: "[NEW] Operator console"
- public: "[NEW] Public page"
+browser: "Trusted local operator" {
+ console: "[NEW] Two client lanes"
+ previews: "[NEW] Scoped previews and downloads"
 }
-host: "Local Node process" {
- api: "[NEW] Authenticated control API"
- workers: "[NEW] Three model contexts"
- broker: "[NEW] Search and read mediator"
- state: "[NEW] SQLite policy, inputs, artifacts" {shape: cylinder}
- fixtures: "[NEW] Immutable synthetic corpus"
- publish: "[NEW] Atomic publication and renderer"
+host: "Local Node application" {
+ runs: "[NEW] Immutable engagement workers"
+ broker: "[NEW] Scope and clearance broker"
+ state: "[NEW] SQLite input and artifact state" {shape: cylinder}
+ fixtures: "[NEW] Canonical client fixtures"
+ compiler: "[NEW] Workflow compiler and tests"
+ delivery: "[NEW] Client-matching delivery gate"
 }
-external: "External services" {
- hydra: "[EXTERNAL] HydraDB ranked search"
- model: "[EXTERNAL] Model provider"
+external: "Vendor services" {
+ hydra: "[EXTERNAL] HydraDB separate collections"
+ model: "[EXTERNAL] Model separate histories"
 }
-browser.console -> host.api: "Same-origin commands and state"
-host.api -> host.workers: "Spawn with assigned authority"
-host.workers -> host.broker: "Query only"
-host.broker -> external.hydra: "Fixed scope and nonempty ACL"
-host.broker -> host.fixtures: "Ranked IDs to canonical bodies"
-host.broker -> host.state: "Check policy and record reads"
-host.workers -> external.model: "Permitted context and structured output"
-host.workers -> host.state: "Inputs and drafts"
-host.api -> host.state: "Grant and reclassify"
-host.api -> host.publish: "Publication request"
-host.publish -> host.state: "Check and commit atomically"
-host.publish -> browser.public: "Released escaped content only"
+browser.console -> host.runs: "Spawn; reassignment creates fresh run"
+host.runs -> host.broker: "Query; bound identity"
+host.broker -> external.hydra: "Fixed client scope and ACL"
+host.broker -> host.fixtures: "Ranked IDs to verified bodies"
+host.broker -> host.state: "Admit matching client and clearance"
+host.runs -> external.model: "Permitted context only"
+host.runs -> host.compiler: "Bounded workflow JSON"
+host.fixtures -> host.compiler: "Independent acceptance cases"
+host.compiler -> host.state: "Client-owned tested app"
+host.state -> host.delivery: "Identity, provenance, passed tests"
+host.delivery -> browser.previews: "Matching client standalone app"
