@@ -5,7 +5,8 @@
 - [x] Record approved five-worker requirements and technical design.
 - [x] Implement company policy store, shared-source fixtures, typed proposal compiler and live retrieval adapter.
 - [x] Qualify five real model workers, exact policy grant, partner outputs and browser comparison/architecture. Evidence: docs/specs/company-proposal/test-plan.md.
-- [ ] Adapt persistent orchestration and authentication for public Vercel deployment and TL subdomain. Current operator routes remain local only.
+- [x] Connect authenticated Vercel UI to the persistent Mac backend. See the hosted demo follow-up below.
+- [ ] Replace the temporary Mac/tunnel arrangement with durable hosting and configure a TL subdomain.
 - [ ] Decide whether to integrate remote Boat execution after current demo qualification. The architecture view labels this proposed.
 
 ## Original prototype
@@ -21,7 +22,8 @@
 - [x] Save production receipt, screenshots and both clients' standalone HTML/JSON artifacts.
 - [x] Provide Workspace and Stage views of the same core.
 - [x] Record the isolated Temporal pause/restart/resume experiment without adding it to the core.
-- [ ] Capture, review and upload the three-minute video. The browser CDP attempt stalled and produced no final video.
+- [x] Capture and assemble the live demo video; inspect encoded frames and verify decoding. See outputs/video/live-recording-review.md.
+- [ ] Obtain final presentation acceptance and upload the selected video to the submission destination.
 - [ ] Review tracked public contents and dependency licenses; publish the MIT repository.
 - [ ] Complete hackathon submission before its deadline.
 - [ ] Stretch only after core: dynamic reclassification or client-only policy change/rebuild. No implied noon commitment.
