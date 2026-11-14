@@ -1,0 +1,32 @@
+direction: down
+browser: "Trusted local operator" {
+ console: "[NEW] Two client lanes and source graph"
+ previews: "[NEW] Scoped previews and downloads"
+}
+host: "Local Node application" {
+ planner: "[NEW] Metadata-only coordinator"
+ runs: "[NEW] Immutable client workers"
+ broker: "[NEW] Scope, clearance and grant broker"
+ state: "[NEW] SQLite inputs, grants and artifacts" {shape: cylinder}
+ wiki: "[NEW] Labeled immutable Markdown brain"
+ compiler: "[NEW] Workflow compiler and independent checks"
+ delivery: "[NEW] Client-matching delivery gate"
+}
+external: "Vendor services" {
+ hydra: "[EXTERNAL] One HydraDB database / client collections"
+ model: "[EXTERNAL] xAI separate model histories"
+}
+browser.console -> host.planner: "Fixed mission metadata"
+host.planner -> external.model: "Metadata-only assignment proposal"
+host.planner -> host.runs: "Server-validated client and clearance"
+host.runs -> host.broker: "Query / exact same-client read request"
+host.broker -> external.hydra: "Fixed database, client collection and ACL"
+host.broker -> host.wiki: "Ranked IDs to canonical labeled bodies"
+host.broker -> host.state: "Atomic read admission / one-use grant"
+browser.console -> host.broker: "Approve scoped read / attempt attachment"
+host.runs -> external.model: "Own-client permitted context only"
+host.runs -> host.compiler: "Bounded generated workflow JSON"
+host.compiler -> host.state: "Client-owned app and test results"
+host.state -> browser.console: "Actual read, grant and artifact events"
+host.state -> host.delivery: "Client, provenance and passing checks"
+host.delivery -> browser.previews: "Matching-client standalone app"

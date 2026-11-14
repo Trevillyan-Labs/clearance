@@ -1,0 +1,1 @@
+For software factories, the opportunity is more autonomy with less unnecessary access. Clearance makes that boundary visible and inspectable. Built by Bill at Trevillyan Labs. Building agent systems? Find Bill for a walkthrough and compare notes. Share the brain. Isolate the context.

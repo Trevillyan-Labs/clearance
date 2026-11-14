@@ -1,0 +1,100 @@
+[
+  {
+    "scene": "title",
+    "start": 0,
+    "duration": 7,
+    "title": "",
+    "caption": ""
+  },
+  {
+    "scene": "overview",
+    "start": 7,
+    "duration": 14,
+    "title": "One company brain. Different permissions.",
+    "caption": "Synthetic company data | Real application states"
+  },
+  {
+    "scene": "mission-start",
+    "start": 21,
+    "duration": 8,
+    "title": "Five workers. Two client proposals.",
+    "caption": "Real model execution | Generation time shortened"
+  },
+  {
+    "scene": "beacon-context",
+    "start": 29,
+    "duration": 15,
+    "title": "Shared firm knowledge. Separate client context.",
+    "caption": "Connections show sources actually admitted to the selected worker"
+  },
+  {
+    "scene": "executive-comparison",
+    "start": 44,
+    "duration": 13,
+    "title": "Same document. Different clearance.",
+    "caption": "Intern denied | Chief of staff permitted | Actual policy evaluation"
+  },
+  {
+    "scene": "scope-comparison",
+    "start": 57,
+    "duration": 10,
+    "title": "High clearance is not a master key.",
+    "caption": "Neither profile has access to the client compartment"
+  },
+  {
+    "scene": "approval-request",
+    "start": 67,
+    "duration": 17,
+    "title": "A precise approval, not a blanket upgrade.",
+    "caption": "One worker | One document version | One read | Expiring grant"
+  },
+  {
+    "scene": "approval-consumed",
+    "start": 84,
+    "duration": 8,
+    "title": "Approve the read. Resume the work.",
+    "caption": "Real approval and worker execution | Generation time shortened"
+  },
+  {
+    "scene": "pricing-manifest",
+    "start": 92,
+    "duration": 8,
+    "title": "New context. Same C2 clearance.",
+    "caption": "The restricted policy is recorded in the worker input manifest"
+  },
+  {
+    "scene": "internal-delivery",
+    "start": 100,
+    "duration": 11,
+    "title": "Useful software, with inherited restrictions.",
+    "caption": "Both proposals passed 19 checks | Internal partner delivery succeeds"
+  },
+  {
+    "scene": "calculator-actual",
+    "start": 111,
+    "duration": 12,
+    "title": "Ten percent discount. Commercial review required.",
+    "caption": "$63,000 proposed fees | 33.333% margin | Below the 35% floor"
+  },
+  {
+    "scene": "public-refusal",
+    "start": 123,
+    "duration": 9,
+    "title": "Permission follows the work product.",
+    "caption": "Public delivery blocked by the actual delivery policy"
+  },
+  {
+    "scene": "architecture",
+    "start": 132,
+    "duration": 21,
+    "title": "Small architecture. Explicit permission checks.",
+    "caption": "Vercel + authenticated tunnel + Mac orchestrator | HydraDB | Separate histories"
+  },
+  {
+    "scene": "closing",
+    "start": 153,
+    "duration": 21,
+    "title": "",
+    "caption": ""
+  }
+]

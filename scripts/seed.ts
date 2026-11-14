@@ -1,0 +1,1 @@
+import {loadBrain} from '../lib/brain';import {seedBrain} from '../lib/hydra';import {join} from 'node:path';try{console.log(await seedBrain(loadBrain(join(process.cwd(),'brain'))));}catch(error){console.error(error instanceof Error?error.message:'Seed failed');process.exitCode=1;}

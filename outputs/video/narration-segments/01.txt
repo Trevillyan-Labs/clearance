@@ -1,0 +1,1 @@
+A software factory needs your company's knowledge. But should every agent get the whole company brain? Your intern shouldn't see executive strategy. Your client teams shouldn't share confidential briefs. This is Clearance, built by Bill at Trevillyan Labs: useful autonomous agents, with precise permissions.

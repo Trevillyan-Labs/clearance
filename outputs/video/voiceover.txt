@@ -1,0 +1,13 @@
+A software factory needs your company's knowledge. But should every agent get the whole company brain? Your intern shouldn't see executive strategy. Your client teams shouldn't share confidential briefs. This is Clearance, built by Bill at Trevillyan Labs: useful autonomous agents, with precise permissions.
+
+Our fictional consulting firm has one shared brain and five workers building proposal tools for two clients. Every document has a clearance level and a client scope. Select a worker, and these connections show the sources it actually received. Shared knowledge. Separate working contexts.
+
+Watch the same executive plan under two permission profiles. Intern: denied. Chief of staff: allowed. That's a real policy check. And high clearance isn't a master key. Switch to a client brief, and both are denied because neither profile has that client's scope.
+
+Now pricing needs help. It can read the rate card, but the discount policy is restricted. Here is exactly what it's requesting: one worker, one document version, one read, with an expiry. I approve. The policy enters pricing's context, and work resumes. Its clearance stays at C two. We unlocked the task without granting general access to restricted information.
+
+Five workers produce two working proposal calculators. Their structured contributions are assembled into apps by a trusted compiler. Let's try a ten percent discount and recalculate. The margin falls below the firm's floor, so the app requires review. These outputs inherit their sources' restrictions, too. Internal partner delivery succeeds. Try public delivery: refused. Permission follows the work product.
+
+Vercel serves the interface. An authenticated tunnel reaches the orchestrator on a Mac. Hydra D B searches the labeled Markdown brain. Policy checks scope and clearance before content enters separate worker histories. Real model calls, one process, and recorded approvals.
+
+For software factories, the opportunity is more autonomy with less unnecessary access. Clearance makes that boundary visible and inspectable. Built by Bill at Trevillyan Labs. Building agent systems? Find Bill for a walkthrough and compare notes. Share the brain. Isolate the context.

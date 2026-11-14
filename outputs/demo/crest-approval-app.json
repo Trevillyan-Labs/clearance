@@ -1,0 +1,11 @@
+{
+  "title": "Purchase approval workflow",
+  "currency": "USD",
+  "thresholdCents": 10000000,
+  "belowApprovers": [
+    "Department Manager"
+  ],
+  "atOrAboveApprovers": [
+    "Procurement"
+  ]
+}

@@ -1,0 +1,8 @@
+.git
+.runtime
+outputs
+docs
+tests
+brain
+company-brain
+.env*

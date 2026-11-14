@@ -1,0 +1,1 @@
+Our fictional consulting firm has one shared brain and five workers building proposal tools for two clients. Every document has a clearance level and a client scope. Select a worker, and these connections show the sources it actually received. Shared knowledge. Separate working contexts.

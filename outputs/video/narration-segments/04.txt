@@ -1,0 +1,1 @@
+Now pricing needs help. It can read the rate card, but the discount policy is restricted. Here is exactly what it's requesting: one worker, one document version, one read, with an expiry. I approve. The policy enters pricing's context, and work resumes. Its clearance stays at C two. We unlocked the task without granting general access to restricted information.

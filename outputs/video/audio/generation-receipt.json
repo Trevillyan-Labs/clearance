@@ -1,0 +1,49 @@
+{
+  "voice": "Eric - Smooth, Trustworthy",
+  "voice_id": "cjVigY5qzO86Huf0OWal",
+  "model": "eleven_multilingual_v2",
+  "segments": [
+    {
+      "section": 1,
+      "characters": 308,
+      "seconds": 17.925805,
+      "file": "/Users/ren/.local/state/ren-work/clearance/clearance-prototype-spec-20261114-025947-79995/outputs/video/audio/01.mp3"
+    },
+    {
+      "section": 2,
+      "characters": 288,
+      "seconds": 19.551202,
+      "file": "/Users/ren/.local/state/ren-work/clearance/clearance-prototype-spec-20261114-025947-79995/outputs/video/audio/02.mp3"
+    },
+    {
+      "section": 3,
+      "characters": 263,
+      "seconds": 17.089887,
+      "file": "/Users/ren/.local/state/ren-work/clearance/clearance-prototype-spec-20261114-025947-79995/outputs/video/audio/03.mp3"
+    },
+    {
+      "section": 4,
+      "characters": 363,
+      "seconds": 25.58839,
+      "file": "/Users/ren/.local/state/ren-work/clearance/clearance-prototype-spec-20261114-025947-79995/outputs/video/audio/04.mp3"
+    },
+    {
+      "section": 5,
+      "characters": 410,
+      "seconds": 26.795828,
+      "file": "/Users/ren/.local/state/ren-work/clearance/clearance-prototype-spec-20261114-025947-79995/outputs/video/audio/05.mp3"
+    },
+    {
+      "section": 6,
+      "characters": 272,
+      "seconds": 17.461406,
+      "file": "/Users/ren/.local/state/ren-work/clearance/clearance-prototype-spec-20261114-025947-79995/outputs/video/audio/06.mp3"
+    },
+    {
+      "section": 7,
+      "characters": 284,
+      "seconds": 18.250884,
+      "file": "/Users/ren/.local/state/ren-work/clearance/clearance-prototype-spec-20261114-025947-79995/outputs/video/audio/07.mp3"
+    }
+  ]
+}
