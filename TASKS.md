@@ -25,3 +25,9 @@
 - [ ] Review tracked public contents and dependency licenses; publish the MIT repository.
 - [ ] Complete hackathon submission before its deadline.
 - [ ] Stretch only after core: dynamic reclassification or client-only policy change/rebuild. No implied noon commitment.
+
+## Hosted demo follow-up
+
+- [ ] Finish authenticated Vercel-to-Mac connection after the pending bridge credential storage decision; frontend deployed but API deliberately unconfigured.
+- [ ] Verify full hosted flow: state, comparison, mutation/session, approval and both generated applications.
+- [ ] Rotate the Vercel CLI credential after deployment. CLI 50.39.0 emitted its supplied token in generated next-command guidance on 2026-11-14. Do not repeat or persist the value; redact every future CLI output stream. Existing projects share this credential, so do not revoke it without coordinated replacement.

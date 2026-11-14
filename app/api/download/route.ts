@@ -1,9 +1,12 @@
+import {hostedProxy} from '@/lib/hosted-proxy';
 import { NextRequest } from 'next/server';
 import { runtime } from '@/lib/runtime';
 import { localRequest, failure } from '@/lib/http';
 
 export async function GET(req: NextRequest) {
   try {
+    const remote = await hostedProxy(req);
+    if (remote) return remote;
     localRequest(req);
     const id = req.nextUrl.searchParams.get('id') ?? '';
     const engagement = req.nextUrl.searchParams.get('engagement');

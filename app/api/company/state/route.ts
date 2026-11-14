@@ -1,1 +1,2 @@
-import {NextRequest} from 'next/server';import {companyRuntime} from '@/lib/company-runtime';import {localRequest,sessionResponse,failure} from '@/lib/http';export async function GET(req:NextRequest){try{localRequest(req);return sessionResponse(companyRuntime().state());}catch(e){return failure(e);}}
+import {hostedProxy} from '@/lib/hosted-proxy';
+import {NextRequest} from 'next/server';import {companyRuntime} from '@/lib/company-runtime';import {localRequest,sessionResponse,failure} from '@/lib/http';export async function GET(req:NextRequest){try{const remote=await hostedProxy(req);if(remote)return remote;localRequest(req);return sessionResponse(companyRuntime().state());}catch(e){return failure(e);}}
